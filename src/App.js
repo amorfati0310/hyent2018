@@ -11,11 +11,11 @@ class App extends Component {
         <About.Container>
           {/*<About.Entry/>*/}
           {/*<About.Intro/>*/}
-          <About.Concept/>
-          <About.Location/>
-          <About.Video/>
+          {/*<About.Concept/>*/}
+          {/*<About.Location/>*/}
+          {/*<About.Video/>*/}
           <About.Congratulations/>
-          <About.Video/>
+          <About.Footer/>
         </About.Container>
       </Fragment>
     );

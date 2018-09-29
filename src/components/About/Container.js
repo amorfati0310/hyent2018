@@ -6,7 +6,9 @@ const Container = ({ children }) => {
   return (
     <Fragment>
       <ReactFullpage
+        licenseKey='OPEN-SOURCE-GPLV3-LICENSE'
         fixedElements='.global-header'
+        anchors={[ 'about', 'intro', 'concept', 'location', 'video', 'professors', 'footer' ]}
         render={({ state, fullpageApi }) => {
           return (
             <article id="fullpage-wrapper">

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="485px" height="238px" viewBox="0 0 485 238" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 51.1 (57501) - http://www.bohemiancoding.com/sketch -->
+    <title>CC4089B9-7015-4B69-9A8D-C927D4E27BFA</title>
+    <desc>Created with sketchtool.</desc>
+    <defs></defs>
+    <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="ABOUT" transform="translate(-1087.000000, -3594.000000)">
+            <g id="num02_linebox" transform="translate(1087.000000, 3594.000000)">
+                <text id="02_교통정보_텍스트" font-family="NanumSquareOTFEB, NanumSquareOTF" font-size="22" font-weight="600" fill="#FFFFFF">
+                    <tspan x="17" y="44.5">* 교통정보</tspan>
+                </text>
+                <text id="버스-조계사,-인사동-아벤트리호텔," font-family="NanumSquareOTFR, NanumSquareOTF" font-size="20" font-weight="normal" line-spacing="35" fill="#FFFFFF">
+                    <tspan x="33" y="164.5">버스</tspan>
+                    <tspan x="69.4" y="164.5" font-family="NanumSquareOTFL, NanumSquareOTF" font-weight="300"></tspan>
+                    <tspan x="33" y="199.5" font-family="NanumSquareOTFEB, NanumSquareOTF" font-weight="600">	조계사, 인사동 아벤트리호텔, 안국동 정류소 하차 </tspan>
+                    <tspan x="467.541502" y="199.5" font-family="NanumSquareOTFB, NanumSquareOTF" font-weight="bold"></tspan>
+                </text>
+                <rect id="02_2교통정보박스" stroke="#FFFFFF" fill-rule="nonzero" x="0.5" y="0.5" width="484" height="237"></rect>
+                <text id="지하철-안국역-/-종각역-/-종로3가" font-family="NanumSquareOTFR, NanumSquareOTF" font-size="20" font-weight="normal" line-spacing="35">
+                    <tspan x="33" y="86.5" fill="#FFFFFF">지하철</tspan>
+                    <tspan x="87.6" y="86.5" font-family="AppleSDGothicNeo-Light, Apple SD Gothic Neo" font-weight="300" fill="#FFFFFF"></tspan>
+                    <tspan x="33" y="121.5" font-family="AppleSDGothicNeo-Light, Apple SD Gothic Neo" font-weight="300" fill="#FFFFFF">	</tspan>
+                    <tspan x="61" y="121.5" font-family="NanumSquareOTFEB, NanumSquareOTF" font-weight="600" fill="#FF7600">안국역 </tspan>
+                    <tspan x="120.6" y="121.5" font-family="NanumSquareOTFEB, NanumSquareOTF" font-weight="600" fill="#FFFFFF">/ </tspan>
+                    <tspan x="135.3" y="121.5" font-family="NanumSquareOTFEB, NanumSquareOTF" font-weight="600" fill="#0A57B0">종각역 </tspan>
+                    <tspan x="194.9" y="121.5" font-family="NanumSquareOTFEB, NanumSquareOTF" font-weight="600" fill="#FFFFFF">/ </tspan>
+                    <tspan x="209.6" y="121.5" font-family="NanumSquareOTFEB, NanumSquareOTF" font-weight="600" fill="#8532CE">종로3가역 </tspan>
+                    <tspan x="299.8" y="121.5" font-family="NanumSquareOTFEB, NanumSquareOTF" font-weight="600" fill="#FFFFFF">도보 7-10분 </tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>
