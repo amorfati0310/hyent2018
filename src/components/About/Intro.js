@@ -3,22 +3,41 @@ import LogoImage from '../../assets/images/intro/enter_logo.svg';
 import LineImage from '../../assets/images/intro/sep_line.svg';
 import TitleImage from '../../assets/images/intro/title.svg';
 import styled from 'styled-components';
-import { DefaultSection } from './Partials';
+import { DefaultSection, FlexContainer } from './Partials';
 
 const IntroSection = styled(DefaultSection)`
   background-color: #A37CD8;
 `;
 
-const Logo = styled.img`
-  object-fit: cover;
+const LogoBox = styled.div`
+  width: 455px;
+  height: 556px;
+  background: url(${LogoImage}) no-repeat center;
+  background-size: contain;
+  margin-right: 97px;
+`;
+
+const ContentBox = styled.div`
+  display: flex;
+  height: 556px;
+  flex-direction: column;
+  justify-content: center;  
 `;
 
 const Line = styled.img`
+  display: inline-block;
+  width: 102px;
+	height: 16px;
   object-fit: cover;
+  margin-top: 31px;
+  margin-bottom: 56px;
 `;
 
-const Title = styled.img`
-  object-fit: cover;
+const Title = styled.div`
+	width: 544px;
+	height: 155px;
+	background: url(${TitleImage}) no-repeat center;
+	background-size: contain;
 `;
 
 const IntroText = `한양대학교 ERICA 디자인대학 소속의 엔터테인먼트 디자인학과는 새롭게
@@ -44,10 +63,14 @@ class Intro extends PureComponent {
     return (
       <Fragment>
         <IntroSection className="section intro">
-          <Logo src={LogoImage} alt="logo"/>
-          <Line src={LineImage} alt="line"/>
-          <Title src={TitleImage} alt="intro-title"/>
-          <Phrase>{IntroText}</Phrase>
+          <FlexContainer>
+            <LogoBox/>
+            <ContentBox>
+              <Title/>
+              <Line src={LineImage} alt="line"/>
+              <Phrase>{IntroText}</Phrase>
+            </ContentBox>
+          </FlexContainer>
         </IntroSection>
       </Fragment>
     );

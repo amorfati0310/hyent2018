@@ -2,20 +2,21 @@ import React, { Fragment, PureComponent } from 'react';
 import MainLogoImage from '../../assets/images/main_logo.svg';
 import SampleImage from '../../assets/images/sample.png';
 import styled from 'styled-components';
-import { DefaultSection } from './Partials';
+import { DefaultSection, FlexContainer } from './Partials';
 
 const CongratulationsSection = styled(DefaultSection)`
-  background: linear-gradient(#97E055 49%, transparent 49%),
-		linear-gradient(-45deg, white 33%, transparent 33%) 0 50%,
-		white linear-gradient(45deg, white 33%, #97E055 33%) 0 50%;
-  background-repeat: repeat-x;
-	background-size: 1px 100%, 80px 80px, 80px 80px;
+  background-color: #97E055;
+  //background: linear-gradient(#97E055 49%, transparent 49%),
+	//	linear-gradient(-45deg, white 33%, transparent 33%) 0 50%,
+	//	white linear-gradient(45deg, white 33%, #97E055 33%) 0 50%;
+  //background-repeat: repeat-x;
+	//background-size: 1px 100%, 80px 80px, 80px 80px;
 `;
 
-const Container = styled.div`
+const Container = styled(FlexContainer)`
   position: relative;
-  display: flex;
-  justify-content: center;
+  padding-top: 0;
+  align-items: center;
   &:after {
     content: '';
     display: block;

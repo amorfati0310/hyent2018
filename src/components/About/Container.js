@@ -8,6 +8,7 @@ const Container = ({ children }) => {
       <ReactFullpage
         licenseKey='OPEN-SOURCE-GPLV3-LICENSE'
         fixedElements='.global-header'
+        verticalCentered={false}
         anchors={[ 'about', 'intro', 'concept', 'location', 'video', 'professors', 'footer' ]}
         render={({ state, fullpageApi }) => {
           return (

@@ -22,8 +22,9 @@ const jumping = keyframes`
 `;
 
 const Container = styled.div`
+  position: absolute;
+  bottom: 66px;
   width: 100%;
-  margin-top: 125px;
   text-align: center;
   animation: ${jumping} 1.25s 0.5s linear infinite;
   @media (max-width: 1150px) {

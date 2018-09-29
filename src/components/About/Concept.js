@@ -3,14 +3,32 @@ import TitleImage from '../../assets/images/concept/title.svg';
 import SubTitleImage from '../../assets/images/concept/subtitle.svg';
 import BrandingImage from '../../assets/images/concept/branding.svg';
 import styled from 'styled-components';
-import { DefaultSection } from './Partials';
+import { DefaultSection, FlexContainer } from './Partials';
+
+const FlexContainerWithoutPaddingTop = styled(FlexContainer)`
+  padding-top: 0;
+`;
 
 const ConceptSection = styled(DefaultSection)`
   background-color: #80C9F6;
 `;
 
-const Title = styled.img`
+const ContentBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;
 
+
+const Title = styled.img`
+`;
+
+const Line = styled.hr`
+  display: inline-block;
+  width: 370px;
+  border: 1px dotted #FFF;
+  margin-top: 44px;
+  margin-bottom: 46px;
 `;
 
 const Subtitle = styled.img`
@@ -18,7 +36,9 @@ const Subtitle = styled.img`
 `;
 
 const Branding = styled.img`
-
+  display: inline-block;
+  margin-top: 74px;
+  margin-bottom: 56px;
 `;
 
 const BrandingDescription = styled.p`
@@ -26,6 +46,7 @@ const BrandingDescription = styled.p`
 	width: 755px;
 	color: #FFFFFF;
 	font-family: NanumSquareOTF, sans-serif;
+	font-weight: 300;
 	font-size: 22px;
 	line-height: 42px;
 	word-break: keep-all;
@@ -43,10 +64,15 @@ class Concept extends PureComponent {
     return (
       <Fragment>
         <ConceptSection className="section concept">
-          <Title src={TitleImage} alt="title"/>
-          <Subtitle src={SubTitleImage} alt="title"/>
-          <Branding src={BrandingImage} alt="title"/>
-          <BrandingDescription>{BrandingDescriptionText}</BrandingDescription>
+          <FlexContainerWithoutPaddingTop>
+            <ContentBox>
+              <Title src={TitleImage} alt="title"/>
+              <Line/>
+              <Subtitle src={SubTitleImage} alt="title"/>
+              <Branding src={BrandingImage} alt="title"/>
+              <BrandingDescription>{BrandingDescriptionText}</BrandingDescription>
+            </ContentBox>
+          </FlexContainerWithoutPaddingTop>
         </ConceptSection>
       </Fragment>
     );
