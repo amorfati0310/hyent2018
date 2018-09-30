@@ -125,10 +125,6 @@ const ProfessorCongratulations = styled.p`
   word-break: keep-all;
 `;
 
-const ProfessorSpeech = `
-여러분들의 졸업전시를 축하합니다. 여러분들의  졸업전시를 축하합니다. 여러분들의 졸업전시를 축하합니다. 여러분들의 졸업전시를 축하합니다. 여러분들의  졸업전시를 축하합니다. 여러분들의 졸업전시를 축하합니다 여러분들의 졸업전시를 축하합니다. 여러분들의  졸업전시를 축하합니다. 여러분들의 졸업전시를 축하합니다
-`;
-
 
 class Congratulations extends PureComponent {
 
@@ -192,7 +188,7 @@ class Congratulations extends PureComponent {
                   .filter((data, index) => isActive(index))
                   .map((data, index) => (
                     <Fragment>
-                      <ProfessorNameBox>
+                      <ProfessorNameBox key={index}>
                         <ProfessorName>{data.name}</ProfessorName>
                         <ProfessorLabel>{data.position}</ProfessorLabel>
                         <Logo src={MainLogoImage} alt="main-logo"/>

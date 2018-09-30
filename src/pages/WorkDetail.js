@@ -148,18 +148,17 @@ class WorkDetail extends Component {
     category: this.props.location.pathname.split('/')[2],
     data: data.filter(work => {
       const path = this.props.location.pathname.split('/')[2];
-      const id = parseInt(this.props.match.params.id);
+      const id = parseInt(this.props.match.params.id, 10);
       const key = `${path}ID`;
-      if (work.works[path] && work.works[path][key] === id) {
-        return work.works[path];
-      }
+      return work.works[path] && work.works[path][key] === id
     }).shift()
   };
 
   mapToMember = work => {
-    if (work.members) {
+    const members = work.works[this.state.category].members;
+    if (members) {
       return (
-        work.members.map(member => (
+        members.map(member => (
           <Member>
             <Name>{member.name}</Name>
             <Email>{member.email}</Email>

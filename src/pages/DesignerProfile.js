@@ -161,7 +161,7 @@ const WorkCaption = styled.span`
 class DesignerProfile extends Component {
 
   state = {
-    profileData: data.filter(designer => designer.id === parseInt(this.props.match.params.id)).shift()
+    profileData: data.filter(designer => designer.id === parseInt(this.props.match.params.id, 10)).shift()
   };
 
 

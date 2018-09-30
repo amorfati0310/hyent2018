@@ -52,6 +52,7 @@ const SearchResult = styled.ul`
   top: 100%;
   left: 67px;
   background-color: #FFF;
+  padding-top: 10px;
 `;
 
 const Result = styled.li`
@@ -61,7 +62,8 @@ const Result = styled.li`
   border-bottom: 1px solid #BBBBBB;
   border-right: 1px solid #BBBBBB;
   border-left: 1px solid #BBBBBB;
-  font-size: 20px;
+  font-size: 18px;
+  font-weight: 300;
   &:first-child {
     border-top: 1px solid #BBBBBB;
   }
@@ -88,8 +90,15 @@ class SearchForm extends PureComponent {
 
     const { value } = e.currentTarget;
     const { keyCode } = e;
+    let searched = null;
 
-    const searched = searchData.filter(data => data.name.toLowerCase().includes(value.toLowerCase()));
+    if (!!value.length) {
+      searched = searchData
+        .filter(data => data.name.toLowerCase().includes(value.toLowerCase()))
+        .slice(0, 10);
+    } else {
+      this.clearSearched()
+    }
 
     switch (keyCode) {
       case ESC:

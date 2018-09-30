@@ -96,15 +96,17 @@ class Designers extends Component {
       case 'ga':
         return Hangul.disassemble(name).shift() === 'ㄱ';
       case 'nama':
-        return !!~[ 'ㄴ', 'ㄷ', 'ㄹ', 'ㅁ' ].indexOf(Hangul.disassemble(name).shift());
+        return !!~['ㄴ', 'ㄷ', 'ㄹ', 'ㅁ'].indexOf(Hangul.disassemble(name).shift());
       case 'ba':
         return Hangul.disassemble(name).shift() === 'ㅂ';
       case 'sa':
         return Hangul.disassemble(name).shift() === 'ㅅ';
       case 'jacha':
-        return !!~[ 'ㅈ', 'ㅊ' ].indexOf(Hangul.disassemble(name).shift());
+        return !!~['ㅈ', 'ㅊ'].indexOf(Hangul.disassemble(name).shift());
       case 'kaha':
-        return !!~[ 'ㅋ', 'ㅌ', 'ㅍ', 'ㅎ' ].indexOf(Hangul.disassemble(name).shift());
+        return !!~['ㅋ', 'ㅌ', 'ㅍ', 'ㅎ'].indexOf(Hangul.disassemble(name).shift());
+      default:
+        return;
     }
   };
 

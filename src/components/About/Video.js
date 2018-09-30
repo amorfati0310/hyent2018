@@ -54,7 +54,7 @@ class Video extends PureComponent {
           <Container>
             <IFrameContainer>
               <YouTube
-                videoId="UmOFJHZfSBg"
+                videoId="FtU8bs7rTrw"
                 opts={youtubeOptions}
               />
             </IFrameContainer>
