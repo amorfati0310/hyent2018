@@ -13,7 +13,7 @@ const WorkContainer = styled.section`
 const WorkImageContainer = styled.div`
   float:left;
   max-width: 1350px;
-  max-height: 960px;
+  max-height: 980px;
   height: 100%;
   overflow: hidden;
   overflow-y: scroll;

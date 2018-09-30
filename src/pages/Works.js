@@ -49,6 +49,8 @@ const VisibilityFilter = styled.a`
   border: none;
   background-size: cover;
   cursor: pointer;
+  text-decoration: none;
+  
   ${props => props.image && css`
     background: url(${props.image}) no-repeat left;
     margin-left: 10px;

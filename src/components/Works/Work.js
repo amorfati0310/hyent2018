@@ -12,6 +12,7 @@ const WorkItem = styled(Link)`
   transition: all 350ms ease-in-out;
   background: url(${props => props.workImage}) no-repeat center;
   background-size: cover;
+  text-decoration: none;
   
   &:hover {
     box-shadow: 20px 20px 0 #696969;

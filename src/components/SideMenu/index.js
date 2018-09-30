@@ -125,11 +125,11 @@ class SideMenu extends PureComponent {
         <Container visible={visible}>
           <CloseButton onClick={onClose}/>
           <LinksContainer>
-            <Links><HomeLink to="/" activeClassName="active"/></Links>
-            <Links><AboutLink to="/" activeClassName="active"/></Links>
-            <Links><WorksLink to="/works" activeClassName="active"/></Links>
-            <Links><DesignersLink to="/designers" activeClassName="active"/></Links>
-            <Links><TumblbugLink to="/tumblbug" activeClassName="active"/></Links>
+            <Links><HomeLink onClick={onClose} to="/" activeClassName="active"/></Links>
+            <Links><AboutLink onClick={onClose} to="/" activeClassName="active"/></Links>
+            <Links><WorksLink onClick={onClose} to="/works" activeClassName="active"/></Links>
+            <Links><DesignersLink onClick={onClose} to="/designers" activeClassName="active"/></Links>
+            <Links><TumblbugLink onClick={onClose} to="/tumblbug" activeClassName="active"/></Links>
           </LinksContainer>
         </Container>
       </Fragment>
