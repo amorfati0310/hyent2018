@@ -5,8 +5,7 @@ const FlexContainer = styled.div`
   position: relative;
   height: 100%;
   display: flex;
-  justify-content: center;
-  padding-top: 149px;
+  justify-content: flex-start;
 `;
 
 

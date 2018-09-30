@@ -1,8 +1,26 @@
 import React, { Component, Fragment } from 'react';
 import styled, { css } from 'styled-components';
 import { Designer } from '../components/Designers';
+import Hangul from 'hangul-js';
 import AllActive from '../assets/images/designers/btn_works_all_s.svg';
-import { Title } from '../components/Designers/Title';
+import AllInactive from '../assets/images/designers/btn_works_all_n.svg';
+import GiyeokActive from '../assets/images/designers/btn_dsnr_giyeok_s.svg';
+import GiyeokInactive from '../assets/images/designers/btn_dsnr_giyeok_n.svg';
+import NMActive from '../assets/images/designers/btn_dsnr_nm_s.svg';
+import NMInactive from '../assets/images/designers/btn_dsnr_nm_n.svg';
+import BieopActive from '../assets/images/designers/btn_dsnr_b_s.svg';
+import BieopInactive from '../assets/images/designers/btn_dsnr_b_n.svg';
+import SieotActive from '../assets/images/designers/btn_dsnr_s_s.svg';
+import SieotInactive from '../assets/images/designers/btn_dsnr_s_n.svg';
+import JieotChieotActive from '../assets/images/designers/btn_dsnr_jc_s.svg';
+import JieotChieotInactive from '../assets/images/designers/btn_dsnr_jc_n.svg';
+import KiyeokHieotActive from '../assets/images/designers/btn_dsnr_kh_s.svg';
+import KiyeokHieotInactive from '../assets/images/designers/btn_dsnr_kh_n.svg';
+import TitleImage from '../assets/images/designers/title_designers.svg';
+import { Title } from '../components/StyledPartials/TitleWithBgColor';
+import data from '../models/data';
+import { Link } from 'react-router-dom';
+
 
 const Container = styled.article`
   padding-top: 120px;
@@ -10,7 +28,7 @@ const Container = styled.article`
 
 const Description = styled.p`
   margin-top: 34px;
-  margin-bottom: 135px;
+  margin-bottom: 105px;
 	width: 190px;
 	color: #4A4A4A;
 	font-family: NanumSquareOTF, sans-serif;
@@ -19,18 +37,21 @@ const Description = styled.p`
 	line-height: 26px;
 `;
 
-const VisibilityFilter = styled.button`
+const VisibilityFilter = styled.a`
   display: block;
-  width: 80px;
-  height: 19px;
+  width: 120px;
+  height: 22px;
   margin-bottom: 62px;
   border: none;
-  background: url(${AllActive}) no-repeat right;
-  background-size: contain;
-  ${props => props.active && css`
-    background: url(${props.visibilityFilter}) no-repeat center;
-    background-size: contain;
+  background-size: cover;
+  cursor: pointer;
+  ${props => props.image && css`
+    background: url(${props.image}) no-repeat left;
+    margin-left: 10px;
   `}
+  ${props => !props.active && css`
+    margin-left: 45px;
+  `} 
 `;
 
 const SideContent = styled.aside`
@@ -41,44 +62,97 @@ const SideContent = styled.aside`
   padding-left: 91px;
   height: 100vh;
   z-index: 1;
+  overflow: hidden;
+  overflow-y: scroll;
+  &::-webkit-scrollbar { 
+    display: none; 
+  }
 `;
 
 const DesignersList = styled.ul`
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-start;
   margin-top: 188px;
   margin-left: 481px;
+  margin-right: 100px;
 `;
 
 
 class Designers extends Component {
+  state = {
+    visibilityFilter: 'all',
+    designers: data
+  };
+
+  handleVisibilityFilter = visibilityFilter => {
+    this.setState({ visibilityFilter });
+  };
+
+  filterConsonant = name => {
+    switch (this.state.visibilityFilter) {
+      case 'all':
+        return true;
+      case 'ga':
+        return Hangul.disassemble(name).shift() === 'ㄱ';
+      case 'nama':
+        return !!~[ 'ㄴ', 'ㄷ', 'ㄹ', 'ㅁ' ].indexOf(Hangul.disassemble(name).shift());
+      case 'ba':
+        return Hangul.disassemble(name).shift() === 'ㅂ';
+      case 'sa':
+        return Hangul.disassemble(name).shift() === 'ㅅ';
+      case 'jacha':
+        return !!~[ 'ㅈ', 'ㅊ' ].indexOf(Hangul.disassemble(name).shift());
+      case 'kaha':
+        return !!~[ 'ㅋ', 'ㅌ', 'ㅍ', 'ㅎ' ].indexOf(Hangul.disassemble(name).shift());
+    }
+  };
+
   render() {
+    const filters = [
+      { type: 'all', activeImage: AllActive, defaultImage: AllInactive },
+      { type: 'ga', activeImage: GiyeokActive, defaultImage: GiyeokInactive },
+      { type: 'nama', activeImage: NMActive, defaultImage: NMInactive },
+      { type: 'ba', activeImage: BieopActive, defaultImage: BieopInactive },
+      { type: 'sa', activeImage: SieotActive, defaultImage: SieotInactive },
+      { type: 'jacha', activeImage: JieotChieotActive, defaultImage: JieotChieotInactive },
+      { type: 'kaha', activeImage: KiyeokHieotActive, defaultImage: KiyeokHieotInactive },
+    ];
     return (
       <Fragment>
         <Container>
           <SideContent>
-            <Title/>
+            <Title titleImage={TitleImage}/>
             <Description>2018 졸업전시회 ‘층층다리’의 디자이너들을 소개합니다!</Description>
-            <VisibilityFilter/>
-            <VisibilityFilter/>
-            <VisibilityFilter/>
-            <VisibilityFilter/>
-            <VisibilityFilter/>
-            <VisibilityFilter/>
+            {
+              filters.map((filter, index) => {
+                const active = filter.type === this.state.visibilityFilter;
+                return (
+                  <VisibilityFilter
+                    key={index}
+                    active={active}
+                    image={active ? filter.activeImage : filter.defaultImage}
+                    onClick={this.handleVisibilityFilter.bind(null, filter.type)}
+                  />
+                );
+              })
+            }
           </SideContent>
           <DesignersList>
-            <Designer name="김나연" nameEn="Nayeon Kim" photo="https://placehold.it/284x284"/>
-            <Designer name="김나연" nameEn="Nayeon Kim" photo="https://placehold.it/284x284"/>
-            <Designer name="김나연" nameEn="Nayeon Kim" photo="https://placehold.it/284x284"/>
-            <Designer name="김나연" nameEn="Nayeon Kim" photo="https://placehold.it/284x284"/>
-            <Designer name="김나연" nameEn="Nayeon Kim" photo="https://placehold.it/284x284"/>
-            <Designer name="김나연" nameEn="Nayeon Kim" photo="https://placehold.it/284x284"/>
-            <Designer name="김나연" nameEn="Nayeon Kim" photo="https://placehold.it/284x284"/>
-            <Designer name="김나연" nameEn="Nayeon Kim" photo="https://placehold.it/284x284"/>
-            <Designer name="김나연" nameEn="Nayeon Kim" photo="https://placehold.it/284x284"/>
-            <Designer name="김나연" nameEn="Nayeon Kim" photo="https://placehold.it/284x284"/>
-            <Designer name="김나연" nameEn="Nayeon Kim" photo="https://placehold.it/284x284"/>
-            <Designer name="김나연" nameEn="Nayeon Kim" photo="https://placehold.it/284x284"/>
+            {
+              this.state.designers
+                .filter(designer => this.filterConsonant(designer.name))
+                .map((designer, index) => (
+                  <Link key={index} to={`/designer/${designer.id}`}>
+                    <Designer
+                      marginRight="30px"
+                      key={index}
+                      name={designer.name}
+                      nameEn={designer.nameEn}
+                      photo={designer.photo}/>
+                  </Link>
+                ))
+            }
           </DesignersList>
         </Container>
       </Fragment>

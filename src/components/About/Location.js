@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import TitleImage from '../../assets/images/location/title.svg';
 import LocationInfoImage from '../../assets/images/location/location_info.svg';
 import { DefaultSection } from './Partials';
+import SideLine from './Partials/SideLine';
 
 const LocationSection = styled(DefaultSection)`
   background: #80C9F6;
@@ -10,15 +11,14 @@ const LocationSection = styled(DefaultSection)`
 
 const Title = styled.img`
   display: block;
-  width: auto;
-  margin: 114px auto 85px auto;
-
+  margin-bottom: 84px;
+  padding-left: 345px;
+  margin-top: 115px;
 `;
 
 const Container = styled.div`
   display: flex;
-  justify-content: center;
-  margin: 0 auto;
+  justify-content: flex-start;
 `;
 
 
@@ -52,13 +52,33 @@ const InfoText = styled.p`
 `;
 
 class Location extends PureComponent {
+
+  _map = null;
+
+  componentDidMount() {
+    const { maps } = window.daum;
+    const center = new maps.LatLng(33.450701, 126.570667);
+    const options = {
+      center,
+      level: 3
+    };
+    const markerPosition = center;
+    const marker = new maps.Marker({ position: markerPosition });
+    const zoomControl = new maps.ZoomControl();
+    const map = new maps.Map(this._map, options);
+    marker.setMap(map);
+    map.setDraggable(false);
+    map.addControl(zoomControl, maps.ControlPosition.RIGHT);
+  }
+
   render() {
     return (
       <Fragment>
         <LocationSection className="section location">
+          <SideLine marginRight={222}/>
           <Title src={TitleImage} alt="title"/>
           <Container>
-            <MapBox/>
+            <MapBox ref={el => this._map = el} id="map"/>
             <div>
               <SubTitle>전시 장소</SubTitle>
               <InfoText>서울시 종로구 인사동 11길 6 토포하우스</InfoText>

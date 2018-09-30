@@ -1,9 +1,12 @@
 import React, { Component, Fragment } from 'react';
 import styled from 'styled-components';
-import { Title } from '../components/Designers/Title';
 import Designer from '../components/Designers/Designer';
 import LineImage from '../assets/images/profile/dsnr_gradientline.svg';
 import ButtonImage from '../assets/images/profile/btn_dsnr_golist.svg';
+import TitleImage from '../assets/images/designers/title_designers.svg';
+import { Title } from '../components/StyledPartials/TitleWithBgColor';
+import data from '../models/data';
+import { Link } from 'react-router-dom';
 
 const Container = styled.article`
   margin-top: 120px;
@@ -25,7 +28,7 @@ const StyledTitle = styled(Title)`
   margin-right: 228px;
 `;
 
-const GoListButton = styled.button`
+const GoListButton = styled(Link)`
   display: inline-block;
   width: 52px;
   height: 51px;
@@ -40,7 +43,7 @@ const GoListButton = styled.button`
     color: #4A4A4A;
     font-family: NanumSquareOTF, sans-serif;
     font-size: 20px;
-    line-height: 23px;
+    line-height: 51px;
   }
 `;
 
@@ -124,17 +127,19 @@ const Line = styled.hr`
   margin-bottom: 55px;
 `;
 
-const WorksBox = styled.a`
+const WorksBox = styled.div`
   margin-top: 37px;
   display: flex;
 `;
 
-const WorkImage = styled.div`
+const WorkImage = styled(Link)`
   position: relative;
-  margin-left: 27px;
   width: 221px;
   height: 221px;
+  margin-left: 27px;
   border: 2px solid #4A4A4A;
+  background: url(${props => props.image}) no-repeat center;
+  background-size: cover;
   
   &:nth-of-type(2) {
     margin: 0 157px;
@@ -154,13 +159,20 @@ const WorkCaption = styled.span`
 `;
 
 class DesignerProfile extends Component {
+
+  state = {
+    profileData: data.filter(designer => designer.id === parseInt(this.props.match.params.id)).shift()
+  };
+
+
   render() {
+    const { profileData } = this.state;
     return (
       <Fragment>
         <Container>
           <SideContent>
-            <StyledTitle/>
-            <GoListButton><span>목록으로</span></GoListButton>
+            <StyledTitle titleImage={TitleImage}/>
+            <GoListButton to="/designers"><span>목록으로</span></GoListButton>
           </SideContent>
           <ContentBox>
             <SubTitle>INTRODUCTION</SubTitle>
@@ -171,22 +183,32 @@ class DesignerProfile extends Component {
                 top="8px"
                 left="8px"
                 marginBottom="0px"
-                photo="https://placehold.it/214x214"/>
+                photo={profileData.photo}/>
               <DesignerDetail>
                 <NameBox>
-                  <Name>김나연</Name>
-                  <NameEn>Nayeon Kim</NameEn>
+                  <Name>{profileData.name}</Name>
+                  <NameEn>{profileData.nameEn}</NameEn>
                 </NameBox>
-                <Email>nykim@gmail.com</Email>
-                <Introduction>“ 나와 거리가 멀다 생각한 졸업 전시회가 오픈되었네요. 작품을 만들며 어느 때 보다  많이 배웠습니다! 앞으로 전시회를할 후배동기들도 어느분야를하던 화이팅^♡^! 나의 창작물을 완성하여 사람들에게 보여주는 자리는 큰 의미라 생각됩니다 다들 수고했어요! 짝!짝!짝! “ (한마디)</Introduction>
+                <Email>{profileData.email}</Email>
+                <Introduction>{profileData.text}</Introduction>
               </DesignerDetail>
             </DesignerBox>
             <Line/>
             <SubTitle>WORKS</SubTitle>
             <WorksBox>
-              <WorkImage><WorkCaption>DIGITAL MEDIA</WorkCaption></WorkImage>
-              <WorkImage><WorkCaption>INTERACTIVE DESIGN</WorkCaption></WorkImage>
-              <WorkImage><WorkCaption>MOTION GRAPHICS</WorkCaption></WorkImage>
+              {
+                Object.keys(profileData.works).map((key, index) => {
+                  const workID = profileData.works[key][`${key}ID`];
+                  return (
+                    <WorkImage
+                      key={index}
+                      image={profileData.works[key].thumbnailImage}
+                      to={`/work/${key}/${workID}`}>
+                      <WorkCaption>{profileData.works[key].category.replace('_', ' ')}</WorkCaption>
+                    </WorkImage>
+                  );
+                })
+              }
             </WorksBox>
           </ContentBox>
         </Container>

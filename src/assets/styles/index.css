@@ -5,8 +5,47 @@
   box-sizing: border-box;
 }
 
+html {
+  min-width: 1920px;
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+}
+
+#fullpage {
+  max-width: 1920px;
+  max-height: 1080px;
+  min-height: 1080px;
+  margin: 0 auto;
+}
+
+
+#fp-nav li {
+  margin: 50px !important;
+}
+
+#fp-nav span {
+  height: 24px !important;
+  width: 24px !important;
+  border: 1px solid #FFF !important;
+  background: transparent !important;
+  margin: 0 !important;
+}
+
+#fp-nav a[class="active"] span {
+  height: 24px !important;
+  width: 24px !important;
+  background: #FFF !important;
+  box-shadow: 3px 3px 0 #4A4A4A;
+}
+
+.fp-viewing-about #fp-nav{
+  display: none !important;
+}
+
+.fp-viewing-footer #fp-nav{
+  display: none !important;
 }

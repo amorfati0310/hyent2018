@@ -1,55 +1,20 @@
 import React, { Fragment } from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 
 const Container = styled.li`
   display: inline-block;
+  flex-basis: 30%;
   height: 100%;
-  margin-right: 130px;
+  margin-right: ${props => props.marginRight || '130px'};
   margin-bottom: ${props => props.marginBottom || '101px'};
   text-align: center;
 `;
 
-const Circle = styled.div`
-  position: relative;
-  display: inline-block;
-  border: 2px solid #4A4A4A;
-  border-radius: 50%;
+const Photo = styled.img`
   width: 284px;
   height: 284px;
-  
-  ${props => props.photo && css`
-    background: url(${props.photo}) no-repeat center;
-    background-size: cover;
-  `}
-  
-  ${props => (props.w && props.h) && css`
-    width: ${props.w};
-    height: ${props.h};  
-  `}
-  
-  &:after {
-    content: '';
-    display: block;
-    position: absolute;
-    width: 284px;
-    height: 284px;
-    top: 12px;
-    left: 12px;
-    border-radius: 50%;
-    border: 2px solid #4A4A4A;
-    z-index: -1;
-    
-    ${props => (props.w && props.h) && css`
-      width: ${props.w};
-      height: ${props.h};  
-    `}
-    
-    ${props => (props.top && props.left) && css`
-      top: ${props.top};
-      left: ${props.left};  
-    `}
-  }
+  object-fit: cover;
 `;
 
 const Name = styled.span`
@@ -62,6 +27,7 @@ const Name = styled.span`
 	letter-spacing: 10px;
 	line-height: 35px;
 	margin-top: 56px;
+	margin-bottom: 10px;
 `;
 
 const NameEn = styled.span`
@@ -74,11 +40,11 @@ const NameEn = styled.span`
 	line-height: 35px;
 `;
 
-const Designer = ({ width, height, top, left, marginBottom, photo, name, nameEn }) => {
+const Designer = ({ marginBottom, marginRight, photo, name, nameEn }) => {
   return (
     <Fragment>
-      <Container marginBottom={marginBottom}>
-        <Circle w={width} h={height} top={top} left={left} photo={photo}/>
+      <Container marginBottom={marginBottom} marginRight={marginRight}>
+        <Photo src={photo} alt={name}/>
         {name && <Name>{name}</Name>}
         {nameEn && <NameEn>{nameEn}</NameEn>}
       </Container>

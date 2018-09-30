@@ -2,14 +2,22 @@ import React, { Fragment, PureComponent } from 'react';
 import LogoImage from '../../assets/images/intro/enter_logo.svg';
 import LineImage from '../../assets/images/intro/sep_line.svg';
 import TitleImage from '../../assets/images/intro/title.svg';
+import CharWithDotsImage from '../../assets/images/intro/num01_hanyanguniv.svg';
 import styled from 'styled-components';
 import { DefaultSection, FlexContainer } from './Partials';
+import SideIndex from './Partials/SideIndex';
+import Number01Image from '../../assets/images/side_indicator/number01.svg';
 
 const IntroSection = styled(DefaultSection)`
   background-color: #A37CD8;
 `;
 
+const Container = styled(FlexContainer)`
+  padding-top: 149px;
+`;
+
 const LogoBox = styled.div`
+  margin-top: 40px;
   width: 455px;
   height: 556px;
   background: url(${LogoImage}) no-repeat center;
@@ -18,10 +26,11 @@ const LogoBox = styled.div`
 `;
 
 const ContentBox = styled.div`
+  margin-top: 40px;
   display: flex;
   height: 556px;
   flex-direction: column;
-  justify-content: center;  
+  text-align: left;
 `;
 
 const Line = styled.img`
@@ -31,6 +40,14 @@ const Line = styled.img`
   object-fit: cover;
   margin-top: 31px;
   margin-bottom: 56px;
+`;
+
+const CharWithDots = styled.div`
+  width: 332px;
+  height: 37px;
+  margin-bottom: 16px;
+  background: url(${CharWithDotsImage}) no-repeat left;
+	background-size: contain;
 `;
 
 const Title = styled.div`
@@ -63,14 +80,16 @@ class Intro extends PureComponent {
     return (
       <Fragment>
         <IntroSection className="section intro">
-          <FlexContainer>
+          <SideIndex label="학과소개" indexImage={Number01Image} marginRight="140"/>
+          <Container>
             <LogoBox/>
             <ContentBox>
+              <CharWithDots/>
               <Title/>
               <Line src={LineImage} alt="line"/>
               <Phrase>{IntroText}</Phrase>
             </ContentBox>
-          </FlexContainer>
+          </Container>
         </IntroSection>
       </Fragment>
     );

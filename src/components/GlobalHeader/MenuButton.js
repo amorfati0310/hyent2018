@@ -22,7 +22,7 @@ class MenuButton extends PureComponent {
   render() {
     return (
       <Fragment>
-        <Button/>
+        <Button onClick={this.props.onClick}/>
       </Fragment>
     );
   }

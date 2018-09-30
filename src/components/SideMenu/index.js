@@ -10,17 +10,20 @@ import DesignersActive from '../../assets/images/side_menu/btn_mn_designers_s.sv
 import DesignersInactive from '../../assets/images/side_menu/btn_mn_designers_n.svg';
 import TumblbugActive from '../../assets/images/side_menu/btn_mn_tumblbug_s.svg';
 import TumblbugInactive from '../../assets/images/side_menu/btn_mn_tumblbug_n.svg';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 const Container = styled.aside`
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: -453px;
   width: 420px;
   height: 100vh;
   background: #FFF;
   border: 2px solid #4A4A4A;
   box-shadow: 33px 25px 0 #4A4A4A;
   z-index: 20;
+  transition: left 500ms ease-in-out;
   
   &:before {
     content: '';
@@ -32,6 +35,10 @@ const Container = styled.aside`
     height: 11px;
     background: linear-gradient(225.07deg, #97E055 0%, #80C9F6 50.68%, #A37CD8 100%);
   }
+  
+  ${props => props.visible && css`
+    left: 0;
+  `}
 `;
 
 const CloseButton = styled.button`
@@ -44,6 +51,10 @@ const CloseButton = styled.button`
   border: none;
   background: url(${CloseButtonImage}) no-repeat center;
   background-size: cover;
+  
+  &:focus {
+    outline: none;
+  }
 `;
 
 const LinksContainer = styled.ul`
@@ -108,13 +119,14 @@ const TumblbugLink = styled(DefaultLink)`
 
 class SideMenu extends PureComponent {
   render() {
+    const { visible, onClose } = this.props;
     return (
       <Fragment>
-        <Container>
-          <CloseButton/>
+        <Container visible={visible}>
+          <CloseButton onClick={onClose}/>
           <LinksContainer>
-            <Links><HomeLink to="/home" activeClassName="active"/></Links>
-            <Links><AboutLink to="/about" activeClassName="active"/></Links>
+            <Links><HomeLink to="/" activeClassName="active"/></Links>
+            <Links><AboutLink to="/" activeClassName="active"/></Links>
             <Links><WorksLink to="/works" activeClassName="active"/></Links>
             <Links><DesignersLink to="/designers" activeClassName="active"/></Links>
             <Links><TumblbugLink to="/tumblbug" activeClassName="active"/></Links>

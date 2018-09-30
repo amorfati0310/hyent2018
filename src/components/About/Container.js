@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react';
 import ReactFullpage from '@fullpage/react-fullpage';
-import 'fullpage.js/vendors/scrolloverflow';
 
 const Container = ({ children }) => {
   return (
@@ -10,6 +9,8 @@ const Container = ({ children }) => {
         fixedElements='.global-header'
         verticalCentered={false}
         anchors={[ 'about', 'intro', 'concept', 'location', 'video', 'professors', 'footer' ]}
+        navigation={true}
+        navigationPosition="right"
         render={({ state, fullpageApi }) => {
           return (
             <article id="fullpage-wrapper">

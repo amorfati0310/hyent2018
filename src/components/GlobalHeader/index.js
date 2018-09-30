@@ -20,10 +20,11 @@ const Header = styled.header`
 
 class GlobalHeader extends Component {
   render() {
+    const { menuOnClick } = this.props;
     return (
       <Fragment>
         <Header className="global-header">
-          <MenuButton/>
+          <MenuButton onClick={menuOnClick}/>
           <SearchForm/>
         </Header>
       </Fragment>

@@ -4,6 +4,8 @@ import SubTitleImage from '../../assets/images/concept/subtitle.svg';
 import BrandingImage from '../../assets/images/concept/branding.svg';
 import styled from 'styled-components';
 import { DefaultSection, FlexContainer } from './Partials';
+import SideIndex from './Partials/SideIndex';
+import Number02 from '../../assets/images/side_indicator/num02.svg';
 
 const FlexContainerWithoutPaddingTop = styled(FlexContainer)`
   padding-top: 0;
@@ -63,7 +65,8 @@ class Concept extends PureComponent {
   render() {
     return (
       <Fragment>
-        <ConceptSection className="section concept">
+        <ConceptSection className="section fp-auto-height-responsive concept">
+          <SideIndex label="고리전소개" indexImage={Number02} marginRight={401}/>
           <FlexContainerWithoutPaddingTop>
             <ContentBox>
               <Title src={TitleImage} alt="title"/>

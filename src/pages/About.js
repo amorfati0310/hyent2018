@@ -6,11 +6,11 @@ const About = () => {
   return (
     <Fragment>
       <Container>
-        <Entry/>
-        <Intro/>
-        <Concept/>
-        <Location/>
-        <Video/>
+        {/*<Entry/>*/}
+        {/*<Intro/>*/}
+        {/*<Concept/>*/}
+        {/*<Location/>*/}
+        {/*<Video/>*/}
         <Congratulations/>
         <Footer/>
       </Container>
