@@ -1,7 +1,12 @@
 import React, { Component, Fragment } from 'react';
-import * as About from './components/About';
-import GlobalHeader from './components/GlobalHeader';
 import SideMenu from './components/SideMenu';
+import { Route } from 'react-router';
+import About from './pages/About';
+import GlobalHeader from './components/GlobalHeader';
+import Tumblbug from './pages/Tumblbug';
+import Designers from './pages/Designers';
+import DesignerProfile from './pages/DesignerProfile';
+import WorkDetail from './pages/WorkDetail';
 
 
 class App extends Component {
@@ -9,16 +14,12 @@ class App extends Component {
     return (
       <Fragment>
         <GlobalHeader/>
-        <SideMenu/>
-        {/*<About.Container>*/}
-          {/*<About.Entry/>*/}
-          {/*<About.Intro/>*/}
-          {/*<About.Concept/>*/}
-          {/*<About.Location/>*/}
-          {/*<About.Video/>*/}
-          {/*<About.Congratulations/>*/}
-          {/*<About.Footer/>*/}
-        {/*</About.Container>*/}
+        {/*<Route path="/" exact component={About}/>*/}
+        {/*<Route path="/tumblbug" component={Tumblbug}/>*/}
+        {/*<Route path="/designers" component={Designers}/>*/}
+        {/*<Route path="/designer-profile" component={DesignerProfile}/>*/}
+        <Route path="/work-detail" component={WorkDetail}/>
+        {/*<SideMenu/>*/}
       </Fragment>
     );
   }

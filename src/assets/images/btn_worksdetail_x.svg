@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="52px" height="53px" viewBox="0 0 52 53" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 51.1 (57501) - http://www.bohemiancoding.com/sketch -->
+    <title>FFC28803-DE8D-48E4-8E11-F95A163CF69E</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <linearGradient x1="100%" y1="0%" x2="-28.9637855%" y2="128.649196%" id="linearGradient-1">
+            <stop stop-color="#97E055" offset="0%"></stop>
+            <stop stop-color="#80C9F6" offset="50.6773844%"></stop>
+            <stop stop-color="#A37CD8" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="ICONS" transform="translate(-804.000000, -823.000000)">
+            <g id="Xbutton" transform="translate(805.000000, 824.000000)">
+                <g id="Group">
+                    <circle id="Oval-Copy" stroke="#4A4A4A" fill="url(#linearGradient-1)" cx="26.5" cy="27.5" r="23.5"></circle>
+                    <circle id="Oval" stroke="#4A4A4A" fill="#FFFFFF" cx="23.5" cy="23.5" r="23.5"></circle>
+                    <polygon id="Line-10" fill="#4A4A4A" fill-rule="nonzero" points="14.7928932 14.5 15.5 13.7928932 33.7142482 32.0071414 33.0071414 32.7142482"></polygon>
+                    <polygon id="Line-10-Copy" fill="#4A4A4A" fill-rule="nonzero" points="15.5 33.2071068 14.7928932 32.5 33.0071414 14.2857518 33.7142482 14.9928586"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

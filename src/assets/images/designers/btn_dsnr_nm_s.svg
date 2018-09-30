@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="107px" height="18px" viewBox="0 0 107 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 51.1 (57501) - http://www.bohemiancoding.com/sketch -->
+    <title>54C2A198-2155-44D3-A6C7-E2724FF9A122</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <linearGradient x1="100%" y1="0%" x2="-28.9637855%" y2="128.649196%" id="linearGradient-1">
+            <stop stop-color="#97E055" offset="0%"></stop>
+            <stop stop-color="#80C9F6" offset="50.6773844%"></stop>
+            <stop stop-color="#A37CD8" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="100%" y1="49.9626467%" x2="-5.69471761%" y2="50%" id="linearGradient-2">
+            <stop stop-color="#97E055" offset="0%"></stop>
+            <stop stop-color="#80C9F6" offset="50.6773844%"></stop>
+            <stop stop-color="#A37CD8" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="ICONS" transform="translate(-1684.000000, -324.000000)" stroke="#4A4A4A">
+            <g id="btn_dsnr_nm_s" transform="translate(1685.000000, 325.000000)">
+                <g id="ACTIVEBUTTON-Copy-2" transform="translate(0.000000, 4.000000)" fill-rule="nonzero">
+                    <circle id="ACTIVE" fill="#696969" cx="6" cy="5" r="4"></circle>
+                    <circle id="ACTIVE2" fill="url(#linearGradient-1)" cx="4" cy="4" r="4"></circle>
+                </g>
+                <path d="M43,0 L47.0020492,0 L47.0020492,12.5328032 L61.8668033,12.5328032 L61.8668033,15.9363817 L43,15.9363817 L43,0 Z M68.3621926,8.74751491 L68.3621926,5.43936382 L79.161373,5.43936382 L79.161373,8.74751491 L68.3621926,8.74751491 Z M100.997951,12.5964215 L100.997951,3.49900596 L89.8176229,3.49900596 L89.8176229,12.5964215 L100.997951,12.5964215 Z M105,16 L85.8155737,16 L85.8155737,0.0954274354 L105,0.0954274354 L105,16 Z" id="ㄴ-ㅁ-copy-3" fill="url(#linearGradient-2)"></path>
+                <path d="M39,0 L43.0020492,0 L43.0020492,12.5328032 L57.8668033,12.5328032 L57.8668033,15.9363817 L39,15.9363817 L39,0 Z M64.3621926,8.74751491 L64.3621926,5.43936382 L75.161373,5.43936382 L75.161373,8.74751491 L64.3621926,8.74751491 Z M96.9979508,12.5964215 L96.9979508,3.49900596 L85.8176229,3.49900596 L85.8176229,12.5964215 L96.9979508,12.5964215 Z M101,16 L81.8155737,16 L81.8155737,0.0954274354 L101,0.0954274354 L101,16 Z" id="ㄴ-ㅁ-copy-2" fill="#FFFFFF"></path>
+            </g>
+        </g>
+    </g>
+</svg>

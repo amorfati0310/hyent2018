@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="84px" height="20px" viewBox="0 0 84 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 51.1 (57501) - http://www.bohemiancoding.com/sketch -->
+    <title>B22DEC5E-1476-4083-B6C6-F69EB7580E5C</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <linearGradient x1="100%" y1="100%" x2="-6.36603358%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#97E055" offset="0%"></stop>
+            <stop stop-color="#80C9F6" offset="50.6773844%"></stop>
+            <stop stop-color="#A37CD8" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="100%" y1="0%" x2="-28.9637855%" y2="128.649196%" id="linearGradient-2">
+            <stop stop-color="#97E055" offset="0%"></stop>
+            <stop stop-color="#80C9F6" offset="50.6773844%"></stop>
+            <stop stop-color="#A37CD8" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="ICONS" transform="translate(-902.000000, -253.000000)" stroke="#4A4A4A">
+            <g id="btn_works_all_s" transform="translate(903.000000, 254.000000)">
+                <path d="M49.568,11.376 L47.456,5.352 L45.344,11.376 L49.568,11.376 Z M50.816,14.952 L44.096,14.952 L43.016,18.096 L38,18.096 L44.888,0 L50.024,0 L56.912,18.096 L51.896,18.096 L50.816,14.952 Z M63.68,0 L63.68,14.112 L69.32,14.112 L69.32,18.096 L58.976,18.096 L58.976,0 L63.68,0 Z M76.448,0 L76.448,14.112 L82.088,14.112 L82.088,18.096 L71.744,18.096 L71.744,0 L76.448,0 Z" id="ALL-Copy" fill="url(#linearGradient-1)"></path>
+                <path d="M45.568,11.376 L43.456,5.352 L41.344,11.376 L45.568,11.376 Z M46.816,14.952 L40.096,14.952 L39.016,18.096 L34,18.096 L40.888,0 L46.024,0 L52.912,18.096 L47.896,18.096 L46.816,14.952 Z M59.68,0 L59.68,14.112 L65.32,14.112 L65.32,18.096 L54.976,18.096 L54.976,0 L59.68,0 Z M72.448,0 L72.448,14.112 L78.088,14.112 L78.088,18.096 L67.744,18.096 L67.744,0 L72.448,0 Z" id="ALL" fill="#FFFFFF"></path>
+                <g id="Group-5" transform="translate(0.000000, 3.000000)" fill-rule="nonzero">
+                    <circle id="Oval-7-Copy" fill="#696969" cx="6" cy="5" r="4"></circle>
+                    <circle id="Oval-7" fill="url(#linearGradient-2)" cx="4" cy="4" r="4"></circle>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

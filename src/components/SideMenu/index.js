@@ -11,7 +11,7 @@ import DesignersInactive from '../../assets/images/side_menu/btn_mn_designers_n.
 import TumblbugActive from '../../assets/images/side_menu/btn_mn_tumblbug_s.svg';
 import TumblbugInactive from '../../assets/images/side_menu/btn_mn_tumblbug_n.svg';
 import styled from 'styled-components';
-
+import { NavLink } from 'react-router-dom';
 
 const Container = styled.aside`
   position: relative;
@@ -46,7 +46,65 @@ const CloseButton = styled.button`
   background-size: cover;
 `;
 
-const HomeLink = styled.a``;
+const LinksContainer = styled.ul`
+  margin-top: 183px;
+  margin-left: 97px;
+`;
+
+const Links = styled.li`
+  margin-bottom: 98px;
+  text-align: left;
+`;
+
+const DefaultLink = styled(NavLink)`
+  display: inline-block;
+  height: 30px;
+	width: 100%;
+	background-position: left;
+	background-repeat: no-repeat;
+  background-size: contain;
+  transition: background 500ms ease-in-out;
+`;
+
+const HomeLink = styled(DefaultLink)`
+  background-image: url(${HomeInactive});
+  
+  &.active {
+    background-image: url(${HomeActive});    
+  }
+`;
+
+const AboutLink = styled(DefaultLink)`
+  background-image: url(${AboutInactive});
+  
+  &.active {
+    background-image: url(${AboutActive});    
+  }
+`;
+
+const WorksLink = styled(DefaultLink)`
+  background-image: url(${WorksInactive});
+  
+  &.active {
+    background-image: url(${WorksActive});    
+  }
+`;
+
+const DesignersLink = styled(DefaultLink)`
+  background-image: url(${DesignersInactive});
+  
+  &.active {
+    background-image: url(${DesignersActive});    
+  }
+`;
+
+const TumblbugLink = styled(DefaultLink)`
+  background-image: url(${TumblbugInactive});
+  
+  &.active {
+    background-image: url(${TumblbugActive});    
+  }
+`;
 
 class SideMenu extends PureComponent {
   render() {
@@ -54,6 +112,13 @@ class SideMenu extends PureComponent {
       <Fragment>
         <Container>
           <CloseButton/>
+          <LinksContainer>
+            <Links><HomeLink to="/home" activeClassName="active"/></Links>
+            <Links><AboutLink to="/about" activeClassName="active"/></Links>
+            <Links><WorksLink to="/works" activeClassName="active"/></Links>
+            <Links><DesignersLink to="/designers" activeClassName="active"/></Links>
+            <Links><TumblbugLink to="/tumblbug" activeClassName="active"/></Links>
+          </LinksContainer>
         </Container>
       </Fragment>
     );
