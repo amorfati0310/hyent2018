@@ -161,10 +161,32 @@ const WorkCaption = styled.span`
 
 class DesignerProfile extends Component {
 
-  state = {
-    profileData: data.filter(designer => designer.id === parseInt(this.props.match.params.id, 10)).shift()
-  };
+  constructor(props) {
+    super(props);
+    const designerID = DesignerProfile.getDesignerID(this.props.match.params);
+    const profileData = this.getProfileData(designerID);
+    this.state = {
+      designerID,
+      profileData,
+    }
+  }
 
+  static getDesignerID(params) {
+    return params.id
+  }
+
+  getProfileData(id) {
+    const id_ = parseInt(id, 10);
+    return data.filter(designer => designer.id === id_).shift();
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    const designerID = parseInt(prevProps.history.location.pathname.split('/').pop(), 10);
+    if (this.state.designerID !== designerID) {
+      const profileData = this.getProfileData(designerID);
+      this.setState({ designerID, profileData })
+    }
+  }
 
   render() {
     const { profileData } = this.state;

@@ -97,8 +97,6 @@ class SearchForm extends PureComponent {
       this.clearSearched();
     }
 
-    console.log(this.context);
-
     switch (keyCode) {
       case ESC:
         this.clearSearched();
@@ -131,13 +129,14 @@ class SearchForm extends PureComponent {
               name="search"
               id="search"
               placeholder="이름 또는 작품제목으로 검색"
+              autoComplete="off"
               ref={el => this._input = el}/>
           </Form>
           <SearchResult>
             {
               this.state.searched && this.state.searched.map((value, index) => (
                 <Result key={index}>
-                  <ResultLink onClick={this.clearSearched} to={value.url}>{value.name}</ResultLink>
+                  <ResultLink to={value.url}>{value.name}</ResultLink>
                 </Result>
               ))
             }

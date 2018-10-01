@@ -150,15 +150,6 @@ const ExplanationBox = styled.div`
 
 
 class WorkDetail extends Component {
-  state = {
-    category: this.props.location.pathname.split('/')[2],
-    data: data.filter(work => {
-      const path = this.props.location.pathname.split('/')[2];
-      const id = parseInt(this.props.match.params.id, 10);
-      const key = `${path}ID`;
-      return work.works[path] && work.works[path][key] === id;
-    }).shift()
-  };
 
   mapToMember = work => {
     const members = work.works[this.state.category].members;
@@ -181,26 +172,67 @@ class WorkDetail extends Component {
     }
   };
 
+  constructor(props) {
+    super(props);
+    const category = this.props.location.pathname.split('/')[2];
+    const workID = parseInt(this.props.match.params.id, 10);
+    this.state = {
+      category,
+      workID,
+      data: this.getWorkData(category, workID)
+    };
+  }
 
-  render() {
-    const { data } = this.state;
-    const work = data.works[this.state.category];
+  getWorkData(category, workID) {
+    return data.filter(work => {
+      const key = `${category}ID`;
+      return work.works[category] && work.works[category][key] === workID;
+    }).shift();
+  }
+
+  mapToYoutube(youtube) {
     const youtubeOptions = {
       height: 760,
       width: 1350,
       playerVars: { autoplay: true }
     };
+
+    if (Array.isArray(youtube)) {
+      return youtube.map(youtubeID => (
+          <WorkVideoContainer
+            videoId={youtubeID}
+            opts={youtubeOptions}/>
+        )
+      );
+    } else {
+      return (
+        <WorkVideoContainer
+          videoId={youtube}
+          opts={youtubeOptions}/>
+      );
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    const category = prevProps.history.location.pathname.split('/')[2];
+    const workID = parseInt(prevProps.history.location.pathname.split('/').pop(), 10);
+    if (this.state.workID !== workID || this.state.category !== category) {
+      const data = this.getWorkData(category, workID);
+      this.setState({ category, workID, data });
+    }
+  }
+
+  render() {
+    const { data } = this.state;
+    const work = data.works[this.state.category];
+    const { youtube } = work;
     return (
       <Fragment>
         <Container>
           <WorkContainer>
             <WorkImageContainer>
               {
-                work.youtube &&
-                <WorkVideoContainer
-                  videoId={work.youtube}
-                  opts={youtubeOptions}
-                />
+                youtube && this.mapToYoutube(youtube)
               }
               {
                 work.rawImage && <WorkImage src={work.rawImage} alt={work.title}/>

@@ -307,7 +307,8 @@
             "name": "이채정",
             "email": "dkgus9961@naver.com"
           }
-        ]
+        ],
+        "youtube": "a1Cun4OdIxw"
       },
       "motion": {
         "motionID": 8,
@@ -482,7 +483,8 @@
             "name": "이채정",
             "email": "dkgus9961@naver.com"
           }
-        ]
+        ],
+        "youtube": "a1Cun4OdIxw"
       },
       "motion": {
         "motionID": 11,
@@ -615,9 +617,9 @@
             "email": "tass0429@gmail.com"
           },
           {
-            "id": "",
-            "name": "이영",
-            "email": ""
+            "id": "31",
+            "name": "이영목",
+            "email": "blue9020@naver.com"
           }
         ]
       },
@@ -866,7 +868,8 @@
         "category": "MOTION_GRAPHIC",
         "text": "매번 똑같은 종류의 맥주가 지겨우신가요? 집에서도 별도의 준비 없이 근사한 술 한 잔의 경험을 느끼고 싶나요? 그런 당신을 위한 앱 ‘BeerHere’을 소개하는 영상입니다. 내가 선호하는 맥주의 발상지, 바디감, 맛과 향을 입력하고 다양한 나라의 맥주를 마셔보며 BeerHere과 맥주 여행을 시작해보세요!",
         "thumbnailImage": "https://s3.ap-northeast-2.amazonaws.com/hyent2018-images/thumbnails/motion_baekjiyoon_th.jpg",
-        "rawImage": "https://s3.ap-northeast-2.amazonaws.com/hyent2018-images/thumbnails/motion_baekjiyoon_de.jpg"
+        "rawImage": "https://s3.ap-northeast-2.amazonaws.com/hyent2018-images/thumbnails/motion_baekjiyoon_de.jpg",
+        "youtube": "38CPO7OdAd0"
       }
     }
   },
@@ -1016,8 +1019,8 @@
         "title": "Give Hug",
         "category": "INTERACTIVE_DESIGN",
         "text": "전국에 매년 유기되는 반려동물 수 무려 10만 마리. 유기견 보호소에 들어간다고 해도 지원과 입양을 받지 못해 대부분 10일 후 안락사를 당하게 되는 현실입니다. 이 점을 문제 삼아 잦은 유기장소인 백화점 강아지 보관함에 인터렉티브 미디어를 설치하여 유기를 방지하고 사람들의 관심을 유도하는 프로젝트를 기획하게 되었습니다. ",
-        "thumbnailImage": "https://s3.ap-northeast-2.amazonaws.com/hyent2018-images/thumbnails/interac_songjinyoung_th.jpg",
-        "rawImage": "https://s3.ap-northeast-2.amazonaws.com/hyent2018-images/thumbnails/interac_songjinyoung_de.jpg",
+        "thumbnailImage": "https://s3.ap-northeast-2.amazonaws.com/hyent2018-images/thumbnails/interac_songbyeoli_th.jpg",
+        "rawImage": "https://s3.ap-northeast-2.amazonaws.com/hyent2018-images/thumbnails/interac_songbyeoli_de.jpg",
         "members": [
           {
             "id": 22,
@@ -1036,8 +1039,8 @@
         "title": "NORMALS",
         "category": "MOTION_GRAPHIC",
         "text": "특별하고 귀여운 6명의 친구들이 모여 사는 노말즈 마을. 각자의 개성이 장점이 되는 노말즈 마을의 평범한 일상이야기. 노말즈는 다수 사이의 다름에서 비롯된 차별과 편견을 줄이고자 기획한 애니메이션입니다. 다수와 다른 성향을 가진 사람이나 신체적 다름,성소수자 등을 캐릭터의 특징을 통해 비유적으로 나타냈고, 차별하는 이들이 없는 그들만의 유토피아를 설정하여 차별과 편견의 이유를 고찰해보자는 의도를 담았습니다.",
-        "thumbnailImage": "https://s3.ap-northeast-2.amazonaws.com/hyent2018-images/thumbnails/motion_songjinyoung_th.jpg",
-        "rawImage": "https://s3.ap-northeast-2.amazonaws.com/hyent2018-images/thumbnails/motion_songjinyoung_de.jpg"
+        "thumbnailImage": "https://s3.ap-northeast-2.amazonaws.com/hyent2018-images/thumbnails/motion_songbyeoli_th.jpg",
+        "rawImage": "https://s3.ap-northeast-2.amazonaws.com/hyent2018-images/thumbnails/motion_songbyeoli_de.jpg"
       }
     }
   },
@@ -1141,7 +1144,7 @@
         "text": "'종이'를 컨셉으로한 영화 소공녀의 엔딩 타이틀 시퀀스 영상입니다 소공녀를 보고 어려운 상황에서도 자신이 원하고자하는것을 지키려는 미소의 덤덤함과, 미소가 들렸던 집들에서 일어나는 사건들을 표현 하고자 하였습니다.",
         "thumbnailImage": "https://s3.ap-northeast-2.amazonaws.com/hyent2018-images/thumbnails/motion_sinseonjoo_th.png",
         "rawImage": "https://s3.ap-northeast-2.amazonaws.com/hyent2018-images/thumbnails/motion_sinseonjoo_de.png",
-        "youtube": "esYoADreXY4"
+        "youtube": "cwy3Sef2KLg"
       }
     }
   },
@@ -1193,7 +1196,7 @@
         "text": "돈이면 자존심도 팔아먹는 두 남자 칼렙과 유진은 신원미상의 의뢰인이 보석을 찾아달라며 걸어놓은 큰 금액을 본다, 비행기를 타고 도착한 알수없는 아시아의 슬럼, 둘은 미로 같은 곳 에서 의뢰로 받은 단 하나의 정보인 보석사진을 들고 하나둘씩 단서를찾는다, 어렵게 찾은 의뢰인은 슬럼가 우두머리의 두 형제, 그들의 목적은 함께 아버지를 자리에서 떨어뜨리는것. 즉, 역모를 꾀하는 것이다.",
         "thumbnailImage": "https://s3.ap-northeast-2.amazonaws.com/hyent2018-images/thumbnails/motion_simjisu_th.jpg",
         "rawImage": "https://s3.ap-northeast-2.amazonaws.com/hyent2018-images/thumbnails/motion_simjisu_de.jpg",
-        "youtube": "9oVmPVCaf9c"
+        "youtube": "dlYY08fpEM4"
       }
     }
   },
@@ -1354,7 +1357,8 @@
         "category": "MOTION_GRAPHIC",
         "text": "인디 가수 camel 의 곡 <달모양>의 뮤직비디오 티저를 제작하였습니다. 밝은 음악에 대비되는 가사를 가진 곡으로, 색감을 통해 밝은 느낌을 표현하고 메타포의 활용으로 그와 상반되는 내용을 담았습니다.",
         "thumbnailImage": "https://s3.ap-northeast-2.amazonaws.com/hyent2018-images/thumbnails/motion_younyujin_th.jpg",
-        "rawImage": "https://s3.ap-northeast-2.amazonaws.com/hyent2018-images/thumbnails/motion_younyujin_de.jpg"
+        "rawImage": "https://s3.ap-northeast-2.amazonaws.com/hyent2018-images/thumbnails/motion_younyujin_de.jpg",
+        "youtube": "q3wcmKn2YtU"
       }
     }
   },
@@ -1589,7 +1593,8 @@
             "name": "이채정",
             "email": "dkgus9961@naver.com"
           }
-        ]
+        ],
+        "youtube": "a1Cun4OdIxw"
       },
       "motion": {
         "motionID": 34,
@@ -1998,7 +2003,7 @@
         "text": "모두가 바쁜 도심 속에서 홀로 여유롭게 태닝을 즐기는 여자의 모습을 담아낸 감성 모션그래픽.",
         "thumbnailImage": "https://s3.ap-northeast-2.amazonaws.com/hyent2018-images/thumbnails/motion_hwangsujin_th.jpg",
         "rawImage": "https://s3.ap-northeast-2.amazonaws.com/hyent2018-images/thumbnails/motion_hwangsujin_de.jpg",
-        "youtube": "VnXxY0ss6To"
+        "youtube": "WX9Kxgws26g"
       }
     }
   }

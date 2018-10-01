@@ -65,7 +65,7 @@ const IntroText = `한양대학교 ERICA 디자인대학 소속의 엔터테인�
 교육과정을 제공한다.`;
 
 const Phrase = styled.p`
-  font-family: NanumSquare, sans-serif;
+  font-family: NanumSquareOTF, sans-serif;
   font-weight: 400;
   width: 664px;
   height: 272px;

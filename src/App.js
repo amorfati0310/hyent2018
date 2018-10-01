@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import SideMenu from './components/SideMenu';
-import { Route } from 'react-router';
+import { Route, Switch } from 'react-router';
 import About from './pages/About';
 import GlobalHeader from './components/GlobalHeader';
 import Tumblbug from './pages/Tumblbug';
@@ -24,14 +24,16 @@ class App extends Component {
       <Fragment>
         <GlobalHeader menuOnClick={this.toggleMenu}/>
         <SideMenu visible={this.state.sideMenuVisible} onClose={this.toggleMenu}/>
-        <Route path="/" exact component={About}/>
-        <Route path="/works" component={Works}/>
-        <Route path="/work/digital/:id" component={WorkDetail}/>
-        <Route path="/work/interactive/:id" component={WorkDetail}/>
-        <Route path="/work/motion/:id" component={WorkDetail}/>
-        <Route path="/designers" exact component={Designers}/>
-        <Route path="/designer/:id" component={DesignerProfile}/>
-        <Route path="/tumblbug" component={Tumblbug}/>
+        <Switch>
+          <Route path="/" exact component={About}/>
+          <Route path="/works" component={Works}/>
+          <Route path="/work/digital/:id" component={WorkDetail}/>
+          <Route path="/work/interactive/:id" component={WorkDetail}/>
+          <Route path="/work/motion/:id" component={WorkDetail}/>
+          <Route path="/designers" exact component={Designers}/>
+          <Route path="/designer/:id" component={DesignerProfile}/>
+          <Route path="/tumblbug" component={Tumblbug}/>
+        </Switch>
       </Fragment>
     );
   }

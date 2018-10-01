@@ -57,7 +57,7 @@ class Location extends PureComponent {
 
   renderMap() {
     const { maps } = window.daum;
-    const center = new maps.LatLng(33.450701, 126.570667);
+    const center = new maps.LatLng(37.5740594, 126.98431670000002);
     const options = {
       center,
       level: 3
@@ -74,7 +74,7 @@ class Location extends PureComponent {
   componentDidMount() {
     window.onload = () => this.renderMap();
   }
-  
+
   render() {
     return (
       <Fragment>
