@@ -146,11 +146,13 @@ class SearchForm extends PureComponent {
     }
   };
 
+  go = (url) => {
+    this.props.history.push(url);
+  };
+
   clearSearched() {
-    setTimeout(() => {
-      this._input.value = '';
-      this.setState({ searched: null })
-    }, 100);
+    this._input.value = '';
+    this.setState({ searched: null })
   };
 
   render() {
@@ -175,7 +177,7 @@ class SearchForm extends PureComponent {
           <SearchResult>
             {
               this.state.searched && this.state.searched.map((value, index) => (
-                  <Result key={index}>
+                  <Result onMouseDown={this.go.bind(null, value.url)} key={index}>
                     <ResultLink to={value.url} replace>{value.name}</ResultLink>
                   </Result>
                 )
