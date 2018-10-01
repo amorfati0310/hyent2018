@@ -18,8 +18,9 @@ const EntrySection = styled(DefaultSection)`
 
 const Container = styled(FlexContainer)`
   justify-content: center;
-  padding-top: 149px;
+  padding-top: 89px;
   overflow-x: hidden;
+  flex-wrap: wrap;
 `;
 
 const MotionLogoBox = styled.div`
@@ -92,8 +93,8 @@ class Entry extends PureComponent {
               <GradientLine src={GradientLineImage} alt="line"/>
               <SubTitle src={SubTitleImage} alt="subtitle"/>
             </ContentBox>
+            <ScrollDownMark/>
           </Container>
-          <ScrollDownMark/>
         </EntrySection>
       </Fragment>
     );

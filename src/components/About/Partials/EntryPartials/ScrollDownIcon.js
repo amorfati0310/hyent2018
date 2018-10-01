@@ -22,8 +22,6 @@ const jumping = keyframes`
 `;
 
 const Container = styled.div`
-  position: absolute;
-  bottom: 66px;
   width: 100%;
   text-align: center;
   animation: ${jumping} 1.25s 0.5s linear infinite;
@@ -50,7 +48,7 @@ const ScrollDownMarker = styled.span`
   background: url(${ScrollIconFront});
   background-size: cover;
   &:after {
-    content:'';
+    content: '';
     position: absolute;
     top: 5px;
     left: 5px;
