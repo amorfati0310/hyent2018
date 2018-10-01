@@ -15,6 +15,8 @@ import data from '../models/data';
 
 const Container = styled.article`
   padding-top: 120px;
+  max-width: 1920px;
+  margin: 0 auto;
 `;
 
 

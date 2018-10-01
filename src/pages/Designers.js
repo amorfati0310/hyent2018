@@ -26,6 +26,8 @@ import { Link } from 'react-router-dom';
 
 const Container = styled.article`
   padding-top: 120px;
+  max-width: 1920px;
+  margin: 0 auto;
 `;
 
 const Description = styled.p`
@@ -127,41 +129,41 @@ class Designers extends Component {
     ];
     return (
       <Fragment>
-        <Container>
-          <SideContent>
-            <Title titleImage={TitleImage}/>
-            <Description>2018 졸업전시회 ‘층층다리’의 디자이너들을 소개합니다!</Description>
-            {
-              filters.map((filter, index) => {
-                const active = filter.type === this.state.visibilityFilter;
-                return (
-                  <VisibilityFilter
-                    key={index}
-                    active={active}
-                    image={active ? filter.activeImage : filter.defaultImage}
-                    onClick={this.handleVisibilityFilter.bind(null, filter.type)}
-                  />
-                );
-              })
-            }
-          </SideContent>
-          <DesignersList>
-            {
-              this.state.designers
-                .filter(designer => this.filterConsonant(designer.name))
-                .map((designer, index) => (
-                  <Link key={index} to={`/designer/${designer.id}`}>
-                    <Designer
-                      marginRight="30px"
+          <Container>
+            <SideContent>
+              <Title titleImage={TitleImage}/>
+              <Description>2018 졸업전시회 ‘층층다리’의 디자이너들을 소개합니다!</Description>
+              {
+                filters.map((filter, index) => {
+                  const active = filter.type === this.state.visibilityFilter;
+                  return (
+                    <VisibilityFilter
                       key={index}
-                      name={designer.name}
-                      nameEn={designer.nameEn}
-                      photo={designer.photo}/>
-                  </Link>
-                ))
-            }
-          </DesignersList>
-        </Container>
+                      active={active}
+                      image={active ? filter.activeImage : filter.defaultImage}
+                      onClick={this.handleVisibilityFilter.bind(null, filter.type)}
+                    />
+                  );
+                })
+              }
+            </SideContent>
+            <DesignersList>
+              {
+                this.state.designers
+                  .filter(designer => this.filterConsonant(designer.name))
+                  .map((designer, index) => (
+                    <Link key={index} to={`/designer/${designer.id}`}>
+                      <Designer
+                        marginRight="30px"
+                        key={index}
+                        name={designer.name}
+                        nameEn={designer.nameEn}
+                        photo={designer.photo}/>
+                    </Link>
+                  ))
+              }
+            </DesignersList>
+          </Container>
       </Fragment>
     );
   }

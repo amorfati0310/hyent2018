@@ -35,18 +35,20 @@ const Line = styled.hr`
 
 const Description = styled.p`
 	height: 54px;
-	width: 764px;
+	width: 880px;
 	margin: 0 auto;
 	color: #4A4A4A;
 	font-family: NanumSquareOTF, sans-serif;
-	font-size: 15px;
+	font-size: 18px;
 	line-height: 27px;
+	letter-spacing: 0.5px;
+	word-break: keep-all;
 `;
 
 const SetFlexBox = styled.div`
   display: flex;
   width: 75%;
-  margin: 53px auto 0 auto;
+  margin: 63px auto 0 auto;
   justify-content: space-between;
 `;
 
@@ -95,6 +97,11 @@ const GoToDonationButton = styled.a`
 	font-weight: 800;
 	line-height: 59px;
 	transition: all 1s linear;
+	
+	&:hover {
+	  top: -5px;
+	  left: -4px;
+	}
   
   &:hover:after {
     top: 14px;
