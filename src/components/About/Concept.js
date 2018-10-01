@@ -23,6 +23,7 @@ const ContentBox = styled.div`
 
 
 const Title = styled.img`
+  margin: 0 auto;
 `;
 
 const Line = styled.hr`
@@ -34,7 +35,7 @@ const Line = styled.hr`
 `;
 
 const Subtitle = styled.img`
-
+  margin: 0 auto;
 `;
 
 const Branding = styled.img`
