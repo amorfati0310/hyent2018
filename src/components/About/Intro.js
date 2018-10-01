@@ -14,6 +14,7 @@ const IntroSection = styled(DefaultSection)`
 
 const Container = styled(FlexContainer)`
   padding-top: 149px;
+  overflow-x: hidden;
 `;
 
 const LogoBox = styled.div`

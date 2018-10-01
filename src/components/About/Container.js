@@ -10,7 +10,7 @@ const Container = ({ children }) => {
         verticalCentered={false}
         anchors={[ 'about', 'intro', 'concept', 'location', 'video', 'professors', 'footer' ]}
         navigation={true}
-        navigationPosition="right"
+        navigationPosition="bottom"
         render={({ state, fullpageApi }) => {
           return (
             <article id="fullpage-wrapper">

@@ -19,6 +19,7 @@ const EntrySection = styled(DefaultSection)`
 const Container = styled(FlexContainer)`
   justify-content: center;
   padding-top: 149px;
+  overflow-x: hidden;
 `;
 
 const MotionLogoBox = styled.div`

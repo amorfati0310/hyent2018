@@ -54,6 +54,7 @@ class Video extends PureComponent {
           <Container>
             <IFrameContainer>
               <YouTube
+                data-autoplay={true}
                 videoId="FtU8bs7rTrw"
                 opts={youtubeOptions}
               />

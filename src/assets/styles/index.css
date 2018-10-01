@@ -21,23 +21,25 @@ body {
   min-height: 1080px;
   margin: 0 auto;
 }
-
+#fp-nav {
+  right: 14px;
+}
 
 #fp-nav li {
-  margin: 50px !important;
+  margin: 40px !important;
 }
 
 #fp-nav span {
-  height: 24px !important;
-  width: 24px !important;
+  height: 16px !important;
+  width: 16px !important;
   border: 1px solid #FFF !important;
   background: transparent !important;
   margin: 0 !important;
 }
 
 #fp-nav a[class="active"] span {
-  height: 24px !important;
-  width: 24px !important;
+  height: 16px !important;
+  width: 16px !important;
   background: #FFF !important;
   box-shadow: 3px 3px 0 #4A4A4A;
 }
