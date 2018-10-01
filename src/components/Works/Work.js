@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 const WorkItem = styled(Link)`
+  position: relative;
   display: inline-block;
   margin-right: 62px;
   margin-bottom: 102px;
@@ -38,13 +39,14 @@ const ContentBox = styled.div`
 
 const Title = styled.span` 
   display: block;
-	width: 60%;
+	width: 70%;
 	font-size: 25px;
 	font-weight: 800;
 	line-height: 37px;
 	padding-bottom: 17px;
 	border-bottom: 2px solid #FFF;
 	margin: 0 auto 17px;
+	word-break: keep-all;
 `;
 
 const Name = styled.span`
@@ -59,6 +61,9 @@ const Name = styled.span`
 
 const Dot = styled.i`
   display: block;
+  position: absolute;
+  top: 80%;
+  left: 49%;
   width: 10px;
   height: 10px;
   border-radius: 100%;
@@ -67,8 +72,10 @@ const Dot = styled.i`
 `;
 
 const Category = styled.span`
-	height: 30.95px;
-	width: 319px;
+  position: absolute;
+  display: block;
+  top: 85%;
+  width: 100%;
 	font-size: 15px;
 	line-height: 36px;
 	text-align: center;

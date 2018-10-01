@@ -1,6 +1,6 @@
 import React, { Fragment, PureComponent } from 'react';
 import styled from 'styled-components';
-import TitleImage from '../../assets/images/location/title.svg';
+import TitleImage from '../../assets/images/location/num02_subtitle2.png';
 import LocationInfoImage from '../../assets/images/location/location_info.svg';
 import { DefaultSection } from './Partials';
 import SideLine from './Partials/SideLine';
@@ -9,18 +9,22 @@ const LocationSection = styled(DefaultSection)`
   background: #80C9F6;
 `;
 
-const Title = styled.img`
-  display: block;
-  margin-bottom: 84px;
-  padding-left: 345px;
-  margin-top: 115px;
-`;
 
 const Container = styled.div`
   display: flex;
   justify-content: flex-start;
 `;
 
+const Title = styled.div`
+  position: relative;
+  width: 502px;
+  height: 30px;
+  margin-top: 115px;
+  left: 40%;
+  margin-bottom: 84px;
+  background: url(${TitleImage}) no-repeat center;
+  background-size: contain;
+`;
 
 const MapBox = styled.div`
 	height: 592px;
@@ -80,7 +84,7 @@ class Location extends PureComponent {
       <Fragment>
         <LocationSection className="section location">
           <SideLine marginRight={222}/>
-          <Title src={TitleImage} alt="title"/>
+          <Title/>
           <Container>
             <MapBox ref={el => this._map = el} id="map"/>
             <div>

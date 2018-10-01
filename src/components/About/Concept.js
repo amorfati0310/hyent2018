@@ -1,11 +1,11 @@
 import React, { Fragment, PureComponent } from 'react';
-import TitleImage from '../../assets/images/concept/title.svg';
-import SubTitleImage from '../../assets/images/concept/subtitle.svg';
+import TitleImage from '../../assets/images/concept/num02_title.png';
+import SubTitleImage from '../../assets/images/concept/num02_subtitle1.png';
 import BrandingImage from '../../assets/images/concept/branding.svg';
 import styled from 'styled-components';
 import { DefaultSection, FlexContainer } from './Partials';
 import SideIndex from './Partials/SideIndex';
-import Number02 from '../../assets/images/side_indicator/num02.svg';
+import Number02 from '../../assets/images/side_indicator/num02.png';
 
 const FlexContainerWithoutPaddingTop = styled(FlexContainer)`
   padding-top: 0;
@@ -23,6 +23,8 @@ const ContentBox = styled.div`
 
 
 const Title = styled.img`
+  width: 367px;
+  height: 86px;
   margin: 0 auto;
 `;
 
@@ -36,6 +38,9 @@ const Line = styled.hr`
 
 const Subtitle = styled.img`
   margin: 0 auto;
+  width: 562px;
+  height: 39px;
+  object-fit: contain;
 `;
 
 const Branding = styled.img`

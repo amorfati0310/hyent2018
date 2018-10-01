@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import styled, { css } from 'styled-components';
 import { Title } from '../components/Designers/Title';
 import { Work } from '../components/Works';
-import TitleImage from '../assets/images/works/title_works.svg';
+import TitleImage from '../assets/images/works/title_works.png';
 import AllActive from '../assets/images/designers/btn_works_all_s.svg';
 import AllInactive from '../assets/images/designers/btn_works_all_n.svg';
 import DigitalActiveImage from '../assets/images/works/btn_works_digitalmedia_s.svg';

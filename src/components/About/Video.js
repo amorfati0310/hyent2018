@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { DefaultSection } from './Partials';
 import YouTube from 'react-youtube';
 import SideIndex from './Partials/SideIndex';
-import Number03Image from '../../assets/images/side_indicator/num03.svg';
+import Number03Image from '../../assets/images/side_indicator/num03.png';
 import React, { Fragment, PureComponent } from 'react';
 
 

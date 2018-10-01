@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Designer from '../components/Designers/Designer';
 import LineImage from '../assets/images/profile/dsnr_gradientline.svg';
 import ButtonImage from '../assets/images/profile/btn_dsnr_golist.svg';
-import TitleImage from '../assets/images/designers/title_designers.svg';
+import TitleImage from '../assets/images/designers/title_designers.png';
 import { Title } from '../components/StyledPartials/TitleWithBgColor';
 import data from '../models/data';
 import { Link } from 'react-router-dom';

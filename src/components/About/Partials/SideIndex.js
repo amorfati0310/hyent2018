@@ -12,10 +12,11 @@ const Container = styled.aside`
 const NumberImage = styled.img`
   display: inline-block;
   margin-top: 154px;
-  margin-left: 127px;
+  margin-left: 115px;
   margin-bottom: 62px;
-  height: 81px;
-  width: 122px;
+  height: 79px;
+  width: 142px;
+  object-fit: contain;
 `;
 
 const VerticalBox = styled.div`

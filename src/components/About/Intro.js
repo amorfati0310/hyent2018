@@ -2,11 +2,11 @@ import React, { Fragment, PureComponent } from 'react';
 import LogoImage from '../../assets/images/intro/enter_logo.svg';
 import LineImage from '../../assets/images/intro/sep_line.svg';
 import TitleImage from '../../assets/images/intro/title.svg';
-import CharWithDotsImage from '../../assets/images/intro/num01_hanyanguniv.svg';
+import CharWithDotsImage from '../../assets/images/intro/num01_hanyanguniv.png';
 import styled from 'styled-components';
 import { DefaultSection, FlexContainer } from './Partials';
 import SideIndex from './Partials/SideIndex';
-import Number01Image from '../../assets/images/side_indicator/number01.svg';
+import Number01Image from '../../assets/images/side_indicator/num01.png';
 
 const IntroSection = styled(DefaultSection)`
   background-color: #A37CD8;

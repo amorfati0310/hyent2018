@@ -7,7 +7,7 @@ import Professor4 from '../../assets/images/professors/prof_4_no.png';
 import styled, { css } from 'styled-components';
 import { DefaultSection, FlexContainer } from './Partials';
 import SideIndex from './Partials/SideIndex';
-import Number04Image from '../../assets/images/side_indicator/num04.svg';
+import Number04Image from '../../assets/images/side_indicator/num04.png';
 
 const CongratulationsSection = styled(DefaultSection)`
   background-color: #97E055;

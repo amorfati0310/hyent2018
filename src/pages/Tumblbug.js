@@ -2,11 +2,11 @@ import React, { Fragment, PureComponent } from 'react';
 import styled from 'styled-components';
 import TitleImage from '../assets/images/tumblbug/tumblbug_title2.svg';
 import LineImage from '../assets/images/tumblbug/tumblbug_title_line.svg';
-import Set1Image from '../assets/images/tumblbug/tumblbug_set1.svg';
-import Set2Image from '../assets/images/tumblbug/tumblbug_set2.svg';
-import Set3Image from '../assets/images/tumblbug/tumblbug_set3.svg';
-import Set4Image from '../assets/images/tumblbug/tumblbug_set4.svg';
-import Set5Image from '../assets/images/tumblbug/tumblbug_set5.svg';
+import Set1Image from '../assets/images/tumblbug/tumblbug_set1.png';
+import Set2Image from '../assets/images/tumblbug/tumblbug_set2.png';
+import Set3Image from '../assets/images/tumblbug/tumblbug_set3.png';
+import Set4Image from '../assets/images/tumblbug/tumblbug_set4.png';
+import Set5Image from '../assets/images/tumblbug/tumblbug_set5.png';
 
 const Container = styled.article`
   padding-top: 120px;

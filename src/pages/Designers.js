@@ -18,7 +18,7 @@ import JieotChieotActive from '../assets/images/designers/btn_dsnr_jc_s.svg';
 import JieotChieotInactive from '../assets/images/designers/btn_dsnr_jc_n.svg';
 import KiyeokHieotActive from '../assets/images/designers/btn_dsnr_kh_s.svg';
 import KiyeokHieotInactive from '../assets/images/designers/btn_dsnr_kh_n.svg';
-import TitleImage from '../assets/images/designers/title_designers.svg';
+import TitleImage from '../assets/images/designers/title_designers.png';
 import { Title } from '../components/StyledPartials/TitleWithBgColor';
 import data from '../models/data';
 import { Link } from 'react-router-dom';
