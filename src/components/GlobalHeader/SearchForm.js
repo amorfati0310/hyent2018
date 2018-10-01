@@ -45,7 +45,14 @@ const Input = styled.input`
   color: #222222;
   line-height: 24px;
   border: none;
+  -webkit-appearance: none;
   width: 100%;
+  transition: color 250ms ease-in-out;
+  
+  &::-webkit-input-placeholder {
+    padding-left: 0;
+    text-align: left;
+  }
   
   &::placeholder {
     color: #4A4A4A;
@@ -53,7 +60,13 @@ const Input = styled.input`
 
   &:focus {
     outline: none;
+    -webkit-appearance: none;
   }
+  
+  &:focus::placeholder {
+    color: rgba(78,78,78, .3);
+  }
+  
 `;
 
 const SearchIcon = styled.i`
@@ -148,7 +161,7 @@ class SearchForm extends PureComponent {
               <Input
                 onKeyUp={this.handleFilter}
                 onBlur={this.clearSearched.bind(this)}
-                type="search"
+                type="text"
                 name="search"
                 id="search"
                 placeholder="이름 또는 작품제목으로 검색"
