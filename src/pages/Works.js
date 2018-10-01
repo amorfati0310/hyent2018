@@ -58,13 +58,13 @@ const VisibilityFilter = styled.a`
     margin-left: 10px;
   `}
   ${props => !props.active && css`
-    margin-left: 15px;
+    margin-left: 45px;
   `} 
 `;
 
 const WorkContainer = styled.ul`
   margin-top: 140px;
-  margin-left: 358px;
+  margin-left: 408px;
   display: flex;
   flex-wrap: wrap;
 `;

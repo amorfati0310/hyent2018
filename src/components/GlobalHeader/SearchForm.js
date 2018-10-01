@@ -14,17 +14,38 @@ const Form = styled.div`
   align-items: center;
 `;
 
-const Input = styled.input`
+const InputWrapper = styled.span`
   display: inline-block;
+  position: relative;
+  height: 30px;
+  width: 260px;
   margin-top: 5px;
+  
+  span.line {
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    display: block;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(225.07deg,#97E055 0%,#80C9F6 50.68%,#A37CD8 100%);
+    -webkit-transition: 1s ease;
+    transition: width 250ms ease-in-out;
+  }
+  
+  input:focus-within + span.line {
+    width: 100%;
+  }
+`;
+
+const Input = styled.input`
   font-size: 20px;
   font-weight: 300;
   font-family: NanumSquareOTF, sans-serif;
   color: #222222;
-  height: 24px;
-  width: 260px;
   line-height: 24px;
   border: none;
+  width: 100%;
   
   &::placeholder {
     color: #4A4A4A;
@@ -81,6 +102,7 @@ class SearchForm extends PureComponent {
   state = {
     searched: null
   };
+
   handleFilter = e => {
     const ESC = 27;
     const ENTER = 13;
@@ -122,15 +144,18 @@ class SearchForm extends PureComponent {
         <Container>
           <Form onSubmit={() => false}>
             <SearchIcon/>
-            <Input
-              onKeyUp={this.handleFilter}
-              onBlur={this.clearSearched.bind(this)}
-              type="search"
-              name="search"
-              id="search"
-              placeholder="이름 또는 작품제목으로 검색"
-              autoComplete="off"
-              ref={el => this._input = el}/>
+            <InputWrapper>
+              <Input
+                onKeyUp={this.handleFilter}
+                onBlur={this.clearSearched.bind(this)}
+                type="search"
+                name="search"
+                id="search"
+                placeholder="이름 또는 작품제목으로 검색"
+                autoComplete="off"
+                ref={el => this._input = el}/>
+                <span className="line"/>
+            </InputWrapper>
           </Form>
           <SearchResult>
             {

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const WorkItem = styled(Link)`
   position: relative;
   display: inline-block;
-  margin-right: 62px;
+  margin-right: 42px;
   margin-bottom: 102px;
   width: 322px;
   height: 322px;
