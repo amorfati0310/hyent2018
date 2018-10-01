@@ -12,6 +12,7 @@ const Header = styled.header`
   justify-content: space-between;
   padding: 0 39px 0 50px;
   width: 100%;
+  max-width: 1920px;
   height: 120px;
   top: 0;
   background-color: #FFF;

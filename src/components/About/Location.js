@@ -55,7 +55,7 @@ class Location extends PureComponent {
 
   _map = null;
 
-  componentDidMount() {
+  renderMap() {
     const { maps } = window.daum;
     const center = new maps.LatLng(33.450701, 126.570667);
     const options = {
@@ -71,6 +71,10 @@ class Location extends PureComponent {
     map.addControl(zoomControl, maps.ControlPosition.RIGHT);
   }
 
+  componentDidMount() {
+    window.onload = () => this.renderMap();
+  }
+  
   render() {
     return (
       <Fragment>

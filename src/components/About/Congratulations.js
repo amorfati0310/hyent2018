@@ -1,9 +1,9 @@
 import React, { Fragment, PureComponent } from 'react';
 import MainLogoImage from '../../assets/images/main_logo.svg';
-import Professor1 from '../../assets/images/professors/prof_1_go.svg';
-import Professor2 from '../../assets/images/professors/prof_2_kims.svg';
-import Professor3 from '../../assets/images/professors/prof_3_kimh.svg';
-import Professor4 from '../../assets/images/professors/prof_4_no.svg';
+import Professor1 from '../../assets/images/professors/prof_1_go.png';
+import Professor2 from '../../assets/images/professors/prof_2_kims.png';
+import Professor3 from '../../assets/images/professors/prof_3_kimh.png';
+import Professor4 from '../../assets/images/professors/prof_4_no.png';
 import styled, { css } from 'styled-components';
 import { DefaultSection, FlexContainer } from './Partials';
 import SideIndex from './Partials/SideIndex';
@@ -39,10 +39,9 @@ const ProfessorPhotoContainer = styled.div`
 
 const ProfessorPhoto = styled.a`
   width: 236px;
-  height: 236px;
+  height: 227px;
   background: url(${props => props.photo}) no-repeat center;
   background-size: cover;
-  border: 3px solid #4A4A4A;
   opacity: 0.5;
   transition: opacity 250ms ease-in-out;
   
