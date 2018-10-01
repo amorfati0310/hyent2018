@@ -2,8 +2,8 @@ import React, { Component, Fragment } from 'react';
 import CloseButtonImage from '../../assets/images/side_menu/x.svg';
 import HomeActive from '../../assets/images/side_menu/btn_mn_home_s.svg';
 import HomeInactive from '../../assets/images/side_menu/btn_mn_home_n.svg';
-import AboutActive from '../../assets/images/side_menu/btn_mn_about_s.svg';
-import AboutInactive from '../../assets/images/side_menu/btn_mn_about_n.svg';
+// import AboutActive from '../../assets/images/side_menu/btn_mn_about_s.svg';
+// import AboutInactive from '../../assets/images/side_menu/btn_mn_about_n.svg';
 import WorksActive from '../../assets/images/side_menu/btn_mn_works_s.svg';
 import WorksInactive from '../../assets/images/side_menu/btn_mn_works_n.svg';
 import DesignersActive from '../../assets/images/side_menu/btn_mn_designers_s.svg';
@@ -86,13 +86,13 @@ const HomeLink = styled(DefaultLink)`
   }
 `;
 
-const AboutLink = styled(DefaultLink)`
-  background-image: url(${AboutInactive});
-  
-  &.active {
-    background-image: url(${AboutActive});    
-  }
-`;
+// const AboutLink = styled(DefaultLink)`
+//   background-image: url(${AboutInactive});
+//
+//   &.active {
+//     background-image: url(${AboutActive});
+//   }
+// `;
 
 const WorksLink = styled(DefaultLink)`
   background-image: url(${WorksInactive});
