@@ -7,7 +7,6 @@ import Set2Image from '../assets/images/tumblbug/tumblbug_set2.svg';
 import Set3Image from '../assets/images/tumblbug/tumblbug_set3.svg';
 import Set4Image from '../assets/images/tumblbug/tumblbug_set4.svg';
 import Set5Image from '../assets/images/tumblbug/tumblbug_set5.svg';
-import LinkButtonWithBgColor from '../components/StyledPartials/LinkButtonWithBgColor';
 
 const Container = styled.article`
   padding-top: 120px;
@@ -57,7 +56,7 @@ const SetImage = styled.div`
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-`
+`;
 
 const Set1 = styled(SetImage)`
   background-image: url(${Set1Image});
@@ -79,26 +78,40 @@ const Set5 = styled(SetImage)`
   background-image: url(${Set5Image});
 `;
 
-const GoToDonationButton = styled(LinkButtonWithBgColor)`
+
+const GoToDonationButton = styled.a`
+  display: block;
+  margin: 66px auto 0;
+  position: relative;
+  border: 2px solid #4A4A4A;
+  background-color: #FFF;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
   width: 234px;
   height: 59px;
 	color: #4A4A4A;
 	font-size: 21px;
 	font-weight: 800;
 	line-height: 59px;
-	margin-top: 66px;
 	transition: all 1s linear;
-  
-  &:after {
-    width: 234px;
-    height: 59px;
-    top: 9px;
-    left: 11px;
-  }
   
   &:hover:after {
     top: 14px;
     left: 15px;
+  }  
+  
+  &:after {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    width: 234px;
+    height: 59px;
+    top: 9px;
+    left: 11px;
+    border: 2px solid #4A4A4A;
+    z-index: -1;
+    background: linear-gradient(225.07deg, #97E055 0%, #80C9F6 50.68%, #A37CD8 100%);
   }
 `;
 
@@ -125,7 +138,7 @@ class Tumblbug extends PureComponent {
             <Set5/>
           </SetFlexBox>
         </Container>
-        <GoToDonationButton to="https://tumblbug.com/hy_ent2018">
+        <GoToDonationButton href="https://tumblbug.com/hy_ent2018" target="_blank">
           후원하러가기
         </GoToDonationButton>
       </Fragment>

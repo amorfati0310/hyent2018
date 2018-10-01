@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import styled from 'styled-components';
 import CloseButtonImage from '../assets/images/btn_worksdetail_x.svg';
+import YouTube from 'react-youtube';
 import data from '../models/data';
 
 const Container = styled.article`
@@ -8,6 +9,11 @@ const Container = styled.article`
 `;
 
 const WorkContainer = styled.section`
+`;
+
+const WorkVideoContainer = styled(YouTube)`
+  max-width: 1350px;
+  max-height: 980px;
 `;
 
 const WorkImageContainer = styled.div`
@@ -150,7 +156,7 @@ class WorkDetail extends Component {
       const path = this.props.location.pathname.split('/')[2];
       const id = parseInt(this.props.match.params.id, 10);
       const key = `${path}ID`;
-      return work.works[path] && work.works[path][key] === id
+      return work.works[path] && work.works[path][key] === id;
     }).shift()
   };
 
@@ -179,12 +185,26 @@ class WorkDetail extends Component {
   render() {
     const { data } = this.state;
     const work = data.works[this.state.category];
+    const youtubeOptions = {
+      height: 760,
+      width: 1350,
+      playerVars: { autoplay: true }
+    };
     return (
       <Fragment>
         <Container>
           <WorkContainer>
             <WorkImageContainer>
-              <WorkImage src={work.rawImage} alt={work.title}/>
+              {
+                work.youtube &&
+                <WorkVideoContainer
+                  videoId={work.youtube}
+                  opts={youtubeOptions}
+                />
+              }
+              {
+                work.rawImage && <WorkImage src={work.rawImage} alt={work.title}/>
+              }
             </WorkImageContainer>
             <SideContainer>
               <CloseButton onClick={this.props.history.goBack}/>

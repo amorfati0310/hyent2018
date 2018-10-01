@@ -12,6 +12,8 @@ import BieopActive from '../assets/images/designers/btn_dsnr_b_s.svg';
 import BieopInactive from '../assets/images/designers/btn_dsnr_b_n.svg';
 import SieotActive from '../assets/images/designers/btn_dsnr_s_s.svg';
 import SieotInactive from '../assets/images/designers/btn_dsnr_s_n.svg';
+import OActive from '../assets/images/designers/btn_dsnr_o_s.svg';
+import OInactive from '../assets/images/designers/btn_dsnr_o_n.svg';
 import JieotChieotActive from '../assets/images/designers/btn_dsnr_jc_s.svg';
 import JieotChieotInactive from '../assets/images/designers/btn_dsnr_jc_n.svg';
 import KiyeokHieotActive from '../assets/images/designers/btn_dsnr_kh_s.svg';
@@ -41,7 +43,7 @@ const VisibilityFilter = styled.a`
   display: block;
   width: 120px;
   height: 22px;
-  margin-bottom: 62px;
+  margin-bottom: 45px;
   border: none;
   background-size: cover;
   cursor: pointer;
@@ -101,6 +103,8 @@ class Designers extends Component {
         return Hangul.disassemble(name).shift() === 'ㅂ';
       case 'sa':
         return Hangul.disassemble(name).shift() === 'ㅅ';
+      case 'o':
+        return Hangul.disassemble(name).shift() === 'ㅇ';
       case 'jacha':
         return !!~['ㅈ', 'ㅊ'].indexOf(Hangul.disassemble(name).shift());
       case 'kaha':
@@ -117,6 +121,7 @@ class Designers extends Component {
       { type: 'nama', activeImage: NMActive, defaultImage: NMInactive },
       { type: 'ba', activeImage: BieopActive, defaultImage: BieopInactive },
       { type: 'sa', activeImage: SieotActive, defaultImage: SieotInactive },
+      { type: 'o', activeImage: OActive, defaultImage: OInactive },
       { type: 'jacha', activeImage: JieotChieotActive, defaultImage: JieotChieotInactive },
       { type: 'kaha', activeImage: KiyeokHieotActive, defaultImage: KiyeokHieotInactive },
     ];

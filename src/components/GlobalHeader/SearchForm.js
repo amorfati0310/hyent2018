@@ -3,14 +3,13 @@ import SearchIconImage from '../../assets/images/header/ic_search.svg';
 import styled from 'styled-components';
 import searchData from '../../models/search_data';
 import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router';
 
-
-// TODO: Make search form with RxJS
 const Container = styled.div`
   position: relative;
 `;
 
-const Form = styled.form`
+const Form = styled.div`
   display: flex;
   align-items: center;
 `;
@@ -77,16 +76,14 @@ const ResultLink = styled(Link)`
 
 class SearchForm extends PureComponent {
 
+  _input = null;
+
   state = {
     searched: null
   };
-
-  clearSearched () {
-    this.setState({ searched: null })
-  }
-
   handleFilter = e => {
     const ESC = 27;
+    const ENTER = 13;
 
     const { value } = e.currentTarget;
     const { keyCode } = e;
@@ -97,11 +94,17 @@ class SearchForm extends PureComponent {
         .filter(data => data.name.toLowerCase().includes(value.toLowerCase()))
         .slice(0, 10);
     } else {
-      this.clearSearched()
+      this.clearSearched();
     }
+
+    console.log(this.context);
 
     switch (keyCode) {
       case ESC:
+        this.clearSearched();
+        break;
+      case ENTER:
+        searched && this.props.history.push(searched[0].url);
         this.clearSearched();
         break;
       default:
@@ -110,18 +113,25 @@ class SearchForm extends PureComponent {
     }
   };
 
+  clearSearched() {
+    this._input.value = '';
+    this.setState({ searched: null });
+  };
+
   render() {
     return (
       <Fragment>
         <Container>
-          <Form>
+          <Form onSubmit={() => false}>
             <SearchIcon/>
             <Input
               onKeyUp={this.handleFilter}
+              onBlur={this.clearSearched.bind(this)}
               type="search"
               name="search"
               id="search"
-              placeholder="이름 또는 작품제목으로 검색"/>
+              placeholder="이름 또는 작품제목으로 검색"
+              ref={el => this._input = el}/>
           </Form>
           <SearchResult>
             {
@@ -138,4 +148,4 @@ class SearchForm extends PureComponent {
   }
 }
 
-export default SearchForm;
+export default withRouter(SearchForm);

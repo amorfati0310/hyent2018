@@ -5,6 +5,7 @@
   "dependencies": {
     "@fullpage/react-fullpage": "^0.1.0",
     "hangul-js": "^0.2.5",
+    "history": "^4.7.2",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-router": "^4.3.1",

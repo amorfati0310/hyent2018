@@ -7,6 +7,7 @@ import TitleImage from '../assets/images/designers/title_designers.svg';
 import { Title } from '../components/StyledPartials/TitleWithBgColor';
 import data from '../models/data';
 import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router';
 
 const Container = styled.article`
   margin-top: 120px;
@@ -217,4 +218,4 @@ class DesignerProfile extends Component {
   }
 }
 
-export default DesignerProfile;
+export default withRouter(DesignerProfile);

@@ -1,4 +1,4 @@
-import React, { Fragment, PureComponent } from 'react';
+import React, { Component, Fragment } from 'react';
 import CloseButtonImage from '../../assets/images/side_menu/x.svg';
 import HomeActive from '../../assets/images/side_menu/btn_mn_home_s.svg';
 import HomeInactive from '../../assets/images/side_menu/btn_mn_home_n.svg';
@@ -12,6 +12,7 @@ import TumblbugActive from '../../assets/images/side_menu/btn_mn_tumblbug_s.svg'
 import TumblbugInactive from '../../assets/images/side_menu/btn_mn_tumblbug_n.svg';
 import styled, { css } from 'styled-components';
 import { NavLink } from 'react-router-dom';
+import { withRouter } from 'react-router';
 
 const Container = styled.aside`
   position: fixed;
@@ -117,7 +118,7 @@ const TumblbugLink = styled(DefaultLink)`
   }
 `;
 
-class SideMenu extends PureComponent {
+class SideMenu extends Component {
   render() {
     const { visible, onClose } = this.props;
     return (
@@ -125,8 +126,8 @@ class SideMenu extends PureComponent {
         <Container visible={visible}>
           <CloseButton onClick={onClose}/>
           <LinksContainer>
-            <Links><HomeLink onClick={onClose} to="/" activeClassName="active"/></Links>
-            <Links><AboutLink onClick={onClose} to="/" activeClassName="active"/></Links>
+            <Links><HomeLink onClick={onClose} to="/" exact activeClassName="active"/></Links>
+            {/*<Links><AboutLink onClick={onClose} to="/" exact activeClassName="active"/></Links>*/}
             <Links><WorksLink onClick={onClose} to="/works" activeClassName="active"/></Links>
             <Links><DesignersLink onClick={onClose} to="/designers" activeClassName="active"/></Links>
             <Links><TumblbugLink onClick={onClose} to="/tumblbug" activeClassName="active"/></Links>
@@ -137,4 +138,4 @@ class SideMenu extends PureComponent {
   }
 }
 
-export default SideMenu;
+export default withRouter(SideMenu);
