@@ -147,8 +147,10 @@ class SearchForm extends PureComponent {
   };
 
   clearSearched() {
-    this._input.value = '';
-    this.setState({ searched: null });
+    setTimeout(() => {
+      this._input.value = '';
+      this.setState({ searched: null })
+    }, 100);
   };
 
   render() {
@@ -167,16 +169,17 @@ class SearchForm extends PureComponent {
                 placeholder="이름 또는 작품제목으로 검색"
                 autoComplete="off"
                 ref={el => this._input = el}/>
-                <span className="line"/>
+              <span className="line"/>
             </InputWrapper>
           </Form>
           <SearchResult>
             {
               this.state.searched && this.state.searched.map((value, index) => (
-                <Result key={index}>
-                  <ResultLink to={value.url}>{value.name}</ResultLink>
-                </Result>
-              ))
+                  <Result key={index}>
+                    <ResultLink to={value.url} replace>{value.name}</ResultLink>
+                  </Result>
+                )
+              )
             }
           </SearchResult>
         </Container>
