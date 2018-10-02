@@ -144,6 +144,13 @@ class Designers extends Component {
     this.setQueryString(visibilityFilter);
   }
 
+  componentDidUpdate(prevProps, prevState, snapShot) {
+    const visibilityFilter = this.getFilterQueryString();
+    if (visibilityFilter !== this.state.visibilityFilter) {
+      this.setState({ visibilityFilter })
+    }
+  }
+
 
   render() {
     const filters = [

@@ -72,6 +72,13 @@ const WorkContainer = styled.ul`
 class Works extends Component {
   static filters = ['digital', 'interactive', 'motion'];
 
+  handleVisibilityFilter = visibilityFilter => {
+    this.setState({ visibilityFilter });
+    this.props.history.push({
+      search: `?sort=${visibilityFilter}`
+    });
+  };
+
   constructor(props) {
     super(props);
     this.props.sideVisible && this.props.handleSideMenu();
@@ -96,16 +103,16 @@ class Works extends Component {
     });
   }
 
-  handleVisibilityFilter = visibilityFilter => {
-    this.setState({ visibilityFilter });
-    this.props.history.push({
-      search: `?sort=${visibilityFilter}`
-    });
-  };
-
   componentDidMount() {
     const visibilityFilter = this.getFilterQueryString();
     this.setState({ visibilityFilter });
+  }
+
+  componentDidUpdate(prevProps, prevState, snapShot) {
+    const visibilityFilter = this.getFilterQueryString();
+    if (visibilityFilter !== this.state.visibilityFilter) {
+      this.setState({ visibilityFilter });
+    }
   }
 
   render() {
