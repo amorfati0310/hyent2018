@@ -70,14 +70,42 @@ const WorkContainer = styled.ul`
 `;
 
 class Works extends Component {
-  state = {
-    visibilityFilter: 'all',
-    works: data
-  };
+  static filters = ['digital', 'interactive', 'motion'];
+
+  constructor(props) {
+    super(props);
+    const visibilityFilter = this.getFilterQueryString();
+    this.setQueryString(visibilityFilter);
+    this.state = {
+      visibilityFilter,
+      works: data
+    };
+  }
+
+  getFilterQueryString() {
+    const parsed = new URLSearchParams(this.props.location.search);
+    let visibilityFilter = parsed.get('sort') || 'all';
+    const isValidFilter = Works.filters.find(filter => filter === visibilityFilter);
+    return isValidFilter ? visibilityFilter : 'all';
+  }
+
+  setQueryString(visibilityFilter) {
+    this.props.history.push({
+      search: `?sort=${visibilityFilter}`
+    });
+  }
 
   handleVisibilityFilter = visibilityFilter => {
     this.setState({ visibilityFilter });
+    this.props.history.push({
+      search: `?sort=${visibilityFilter}`
+    });
   };
+
+  componentDidMount() {
+    const visibilityFilter = this.getFilterQueryString();
+    this.setState({ visibilityFilter });
+  }
 
   render() {
     const filters = [
@@ -116,16 +144,16 @@ class Works extends Component {
                   return Object.keys(work['works'])
                     .filter(key => visibilityFilter === 'all' ? true : key === visibilityFilter)
                     .map((key, index) => (
-                      <Work
-                        key={index}
-                        realCategory={key}
-                        workID={work['works'][key][`${key}ID`]}
-                        workImage={work['works'][key].thumbnailImage}
-                        title={work['works'][key].title}
-                        name={work.name}
-                        category={work['works'][key].category.replace('_', ' ')}/>
-                    )
-                  );
+                        <Work
+                          key={index}
+                          realCategory={key}
+                          workID={work['works'][key][`${key}ID`]}
+                          workImage={work['works'][key].thumbnailImage}
+                          title={work['works'][key].title}
+                          name={work.name}
+                          category={work['works'][key].category.replace('_', ' ')}/>
+                      )
+                    );
                 })
             }
           </WorkContainer>

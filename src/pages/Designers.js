@@ -84,13 +84,11 @@ const DesignersList = styled.ul`
 
 
 class Designers extends Component {
-  state = {
-    visibilityFilter: 'all',
-    designers: data
-  };
+  static filters = ['ga', 'nama', 'ba', 'sa', 'o', 'jacha', 'kaha'];
 
   handleVisibilityFilter = visibilityFilter => {
     this.setState({ visibilityFilter });
+    this.setQueryString(visibilityFilter);
   };
 
   filterConsonant = name => {
@@ -116,6 +114,36 @@ class Designers extends Component {
     }
   };
 
+  constructor(props) {
+    super(props);
+    const visibilityFilter = this.getFilterQueryString();
+    this.setQueryString(visibilityFilter);
+    this.state = {
+      visibilityFilter,
+      designers: data
+    };
+  }
+
+  getFilterQueryString() {
+    const parsed = new URLSearchParams(this.props.location.search);
+    let visibilityFilter = parsed.get('filter') || 'all';
+    const isValidFilter = Designers.filters.find(filter => filter === visibilityFilter);
+    return isValidFilter ? visibilityFilter : 'all';
+  }
+
+  setQueryString(visibilityFilter) {
+    this.props.history.push({
+      search: `?filter=${visibilityFilter}`
+    });
+  }
+
+  componentDidMount() {
+    const visibilityFilter = this.getFilterQueryString();
+    this.setState({ visibilityFilter });
+    this.setQueryString(visibilityFilter);
+  }
+
+
   render() {
     const filters = [
       { type: 'all', activeImage: AllActive, defaultImage: AllInactive },
@@ -129,41 +157,41 @@ class Designers extends Component {
     ];
     return (
       <Fragment>
-          <Container>
-            <SideContent>
-              <Title titleImage={TitleImage}/>
-              <Description>2018 졸업전시회 ‘층층다리’의 디자이너들을 소개합니다!</Description>
-              {
-                filters.map((filter, index) => {
-                  const active = filter.type === this.state.visibilityFilter;
-                  return (
-                    <VisibilityFilter
+        <Container>
+          <SideContent>
+            <Title titleImage={TitleImage}/>
+            <Description>2018 졸업전시회 ‘층층다리’의 디자이너들을 소개합니다!</Description>
+            {
+              filters.map((filter, index) => {
+                const active = filter.type === this.state.visibilityFilter;
+                return (
+                  <VisibilityFilter
+                    key={index}
+                    active={active}
+                    image={active ? filter.activeImage : filter.defaultImage}
+                    onClick={this.handleVisibilityFilter.bind(null, filter.type)}
+                  />
+                );
+              })
+            }
+          </SideContent>
+          <DesignersList>
+            {
+              this.state.designers
+                .filter(designer => this.filterConsonant(designer.name))
+                .map((designer, index) => (
+                  <Link key={index} to={`/designer/${designer.id}`}>
+                    <Designer
+                      marginRight="30px"
                       key={index}
-                      active={active}
-                      image={active ? filter.activeImage : filter.defaultImage}
-                      onClick={this.handleVisibilityFilter.bind(null, filter.type)}
-                    />
-                  );
-                })
-              }
-            </SideContent>
-            <DesignersList>
-              {
-                this.state.designers
-                  .filter(designer => this.filterConsonant(designer.name))
-                  .map((designer, index) => (
-                    <Link key={index} to={`/designer/${designer.id}`}>
-                      <Designer
-                        marginRight="30px"
-                        key={index}
-                        name={designer.name}
-                        nameEn={designer.nameEn}
-                        photo={designer.photo}/>
-                    </Link>
-                  ))
-              }
-            </DesignersList>
-          </Container>
+                      name={designer.name}
+                      nameEn={designer.nameEn}
+                      photo={designer.photo}/>
+                  </Link>
+                ))
+            }
+          </DesignersList>
+        </Container>
       </Fragment>
     );
   }
