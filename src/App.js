@@ -11,9 +11,14 @@ import WorkDetail from './pages/WorkDetail';
 
 
 class App extends Component {
-  state = {
-    sideMenuVisible: false
-  };
+
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      sideMenuVisible: false
+    };
+  }
 
   toggleMenu = () => {
     this.setState({ sideMenuVisible: !this.state.sideMenuVisible });
@@ -26,12 +31,47 @@ class App extends Component {
         <SideMenu visible={this.state.sideMenuVisible} onClose={this.toggleMenu}/>
         <Switch>
           <Route path="/" exact component={About}/>
-          <Route path="/works" component={Works}/>
-          <Route path="/work/digital/:id" component={WorkDetail}/>
-          <Route path="/work/interactive/:id" component={WorkDetail}/>
-          <Route path="/work/motion/:id" component={WorkDetail}/>
-          <Route path="/designers" exact component={Designers}/>
-          <Route path="/designer/:id" component={DesignerProfile}/>
+          <Route path="/works"
+                 render={routeProps => (
+                   <Works
+                     {...routeProps}
+                     sideVisible={this.state.sideMenuVisible}
+                     handleSideMenu={this.toggleMenu}/>)
+                 }/>
+          <Route path="/work/digital/:id"
+                 render={routeProps => (
+                   <WorkDetail
+                     {...routeProps}
+                     sideVisible={this.state.sideMenuVisible}
+                     handleSideMenu={this.toggleMenu}/>)
+                 }/>
+          <Route path="/work/interactive/:id"
+                 render={routeProps => (
+                   <WorkDetail
+                     {...routeProps}
+                     sideVisible={this.state.sideMenuVisible}
+                     handleSideMenu={this.toggleMenu}/>)
+                 }/>
+          <Route path="/work/motion/:id"
+                 render={routeProps => (
+                   <WorkDetail
+                     {...routeProps}
+                     sideVisible={this.state.sideMenuVisible}
+                     handleSideMenu={this.toggleMenu}/>)
+                 }/>
+          <Route path="/designers" exact
+                 render={routeProps => (
+                   <Designers
+                     {...routeProps}
+                     sideVisible={this.state.sideMenuVisible}
+                     handleSideMenu={this.toggleMenu}/>)
+                 }/>
+          <Route path="/designer/:id" render={routeProps => (
+            <DesignerProfile
+              {...routeProps}
+              sideVisible={this.state.sideMenuVisible}
+              handleSideMenu={this.toggleMenu}/>)
+            }/>
           <Route path="/tumblbug" component={Tumblbug}/>
         </Switch>
       </Fragment>

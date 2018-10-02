@@ -163,6 +163,7 @@ class DesignerProfile extends Component {
 
   constructor(props) {
     super(props);
+    this.props.sideVisible && this.props.handleSideMenu();
     const designerID = DesignerProfile.getDesignerID(this.props.match.params);
     const profileData = this.getProfileData(designerID);
     this.state = {

@@ -74,6 +74,7 @@ class Works extends Component {
 
   constructor(props) {
     super(props);
+    this.props.sideVisible && this.props.handleSideMenu();
     const visibilityFilter = this.getFilterQueryString();
     this.setQueryString(visibilityFilter);
     this.state = {

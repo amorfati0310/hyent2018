@@ -175,6 +175,7 @@ class Congratulations extends PureComponent {
               {
                 professorData.map((data, index) => (
                   <ProfessorPhoto
+                    key={index}
                     onClick={this.handleClick.bind(null, index)}
                     photo={data.photo}
                     active={isActive(index)}/>
@@ -185,9 +186,9 @@ class Congratulations extends PureComponent {
               {
                 professorData
                   .filter((data, index) => isActive(index))
-                  .map((data, index) => (
-                    <Fragment>
-                      <ProfessorNameBox key={index}>
+                  .map((data, idx) => (
+                    <Fragment key={idx}>
+                      <ProfessorNameBox>
                         <ProfessorName>{data.name}</ProfessorName>
                         <ProfessorLabel>{data.position}</ProfessorLabel>
                         <Logo src={MainLogoImage} alt="main-logo"/>

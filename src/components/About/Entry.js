@@ -75,7 +75,11 @@ class Entry extends PureComponent {
   _video = null;
 
   componentDidMount () {
-    setTimeout(() => { this._video.play() }, 2000)
+    try {
+      this._video.play()
+    } catch (e) {
+      this.props.history.push(window.location.href);
+    }
   };
 
   render() {

@@ -172,8 +172,14 @@ class WorkDetail extends Component {
     }
   };
 
+  goBack = () => {
+    this.props.sideVisible && this.props.handleSideMenu();
+    this.props.history.goBack();
+  };
+
   constructor(props) {
     super(props);
+    this.props.sideVisible && this.props.handleSideMenu();
     const category = this.props.location.pathname.split('/')[2];
     const workID = parseInt(this.props.match.params.id, 10);
     this.state = {
@@ -239,7 +245,7 @@ class WorkDetail extends Component {
               }
             </WorkImageContainer>
             <SideContainer>
-              <CloseButton onClick={this.props.history.goBack}/>
+              <CloseButton onClick={this.goBack}/>
               <TitleBox>
                 <Category>{work.category.replace('_', ' ')}</Category>
                 <Title>{work.title}</Title>
